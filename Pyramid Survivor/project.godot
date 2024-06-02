@@ -13,3 +13,12 @@ config_version=5
 config/name="Pyramid Survivor"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=256
+window/size/viewport_height=240
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

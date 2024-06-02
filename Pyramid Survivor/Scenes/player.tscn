@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bybax5kfs32qj"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_gftd7"]
+[ext_resource type="Texture2D" uid="uid://dgwnww5vlctb0" path="res://Sprites/Place_Holders/placeholder_player.png" id="2_tw13e"]
+[ext_resource type="PackedScene" uid="uid://bh6srikxvjfew" path="res://Scenes/espada.tscn" id="3_15l7g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrl3g"]
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(133, 81)
+script = ExtResource("1_gftd7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tw13e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rrl3g")
+
+[node name="Espada" parent="." instance=ExtResource("3_15l7g")]
+visible = false
+position = Vector2(0, 15)

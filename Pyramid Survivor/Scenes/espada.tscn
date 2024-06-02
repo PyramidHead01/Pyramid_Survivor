@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh6srikxvjfew"]
+
+[ext_resource type="Texture2D" uid="uid://cmy4upo5juut6" path="res://Sprites/Place_Holders/placeholder_espada.png" id="1_86l3i"]
+[ext_resource type="Script" path="res://Scripts/espada.gd" id="1_ou581"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vygt3"]
+size = Vector2(30, 20)
+
+[node name="Espada" type="Area2D"]
+rotation = 1.5708
+script = ExtResource("1_ou581")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_86l3i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, 0.5)
+shape = SubResource("RectangleShape2D_vygt3")
+
+[node name="TiempoEspada" type="Timer" parent="."]
+
+[connection signal="timeout" from="TiempoEspada" to="." method="_on_tiempo_espada_timeout"]
