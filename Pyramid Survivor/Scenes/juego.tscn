@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bp0encacya66p"]
+[gd_scene load_steps=5 format=3 uid="uid://bp0encacya66p"]
 
 [ext_resource type="PackedScene" uid="uid://bybax5kfs32qj" path="res://Scenes/player.tscn" id="1_5awbe"]
 [ext_resource type="Script" path="res://Scripts/variables_comunes.gd" id="1_770qy"]
+[ext_resource type="PackedScene" uid="uid://b0loh22ayo73" path="res://Scenes/interfaz_superior.tscn" id="4_7v2fb"]
 [ext_resource type="Script" path="res://Scripts/spawn_enemigo.gd" id="4_tf83g"]
 
 [node name="Juego" type="Node2D"]
@@ -14,6 +15,8 @@ script = ExtResource("1_770qy")
 [node name="Spawner" type="Timer" parent="."]
 autostart = true
 script = ExtResource("4_tf83g")
+
+[node name="InterfazSuperior" parent="." instance=ExtResource("4_7v2fb")]
 
 [connection signal="hit" from="VariablesComunes" to="Player" method="_on_variables_comunes_hit"]
 [connection signal="timeout" from="Spawner" to="Spawner" method="_on_timeout"]
