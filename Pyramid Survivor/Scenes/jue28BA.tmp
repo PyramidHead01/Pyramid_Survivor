@@ -12,6 +12,7 @@ script = ExtResource("1_770qy")
 [node name="Player" parent="." instance=ExtResource("1_5awbe")]
 
 [node name="Spawner" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 script = ExtResource("4_tf83g")
 

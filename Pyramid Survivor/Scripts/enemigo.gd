@@ -1,14 +1,15 @@
 extends CharacterBody2D
 
-signal hit
-
 var dist = Vector2.ZERO
 var mov_x = false
 
 #Emite la se;al que hara da;o al player
 func _on_area_2d_body_entered(body):
-	emit_signal("hit")
+	if(body.get("name")=="Player"):
+		VariablesComunes.danoPlayer()
+		queue_free()
 
+		
 func _physics_process(delta):
 
 	#Calculamos la distancia a la que esta el player

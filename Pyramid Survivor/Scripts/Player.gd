@@ -20,10 +20,6 @@ func ui_movimiento():
 		
 	velocity = velocity.normalized() * VariablesComunes.vel_player
 
-#Conexion para que el player pierda vida
-func _on_enemigo_hit():
-	print("Mueltooooooooooooo")
-
 #Mezcladillo de cosas, movimiento y atacar por ahora
 func _physics_process(delta):
 	ui_movimiento()
@@ -32,4 +28,5 @@ func _physics_process(delta):
 		$Espada.show()
 		$Espada/TiempoEspada.start()
 
-
+func _on_variables_comunes_hit():
+	print("Mueltooooooooooooo")

@@ -14,12 +14,12 @@ script = ExtResource("1_1fcu7")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_qn8br")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="ZonaQueGolpea" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8lk68")
 
 [node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="ZonaGolpeable" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_k8p2n")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
