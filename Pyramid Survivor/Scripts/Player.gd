@@ -1,10 +1,8 @@
 extends CharacterBody2D
 
-@export var vel = 100
-
 #Movimiento player (Solo se mueve a un punto a la vez)
 func ui_movimiento():
-	
+	VariablesComunes.posicion_player=position
 	velocity = Vector2()
 	
 	if Input.is_action_pressed('ui_right'):
@@ -20,7 +18,7 @@ func ui_movimiento():
 		velocity.y -= 1
 		rotation_degrees = 180
 		
-	velocity = velocity.normalized() * vel
+	velocity = velocity.normalized() * VariablesComunes.vel_player
 
 #Conexion para que el player pierda vida
 func _on_enemigo_hit():
