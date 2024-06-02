@@ -1,15 +1,6 @@
 extends Area2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+#Activado espada
 func _on_tiempo_espada_timeout():
 	print("Ya no da;o")
 	hide()

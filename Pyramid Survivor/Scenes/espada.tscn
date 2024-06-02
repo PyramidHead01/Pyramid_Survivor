@@ -18,5 +18,6 @@ position = Vector2(4.5, 0.5)
 shape = SubResource("RectangleShape2D_vygt3")
 
 [node name="TiempoEspada" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="timeout" from="TiempoEspada" to="." method="_on_tiempo_espada_timeout"]

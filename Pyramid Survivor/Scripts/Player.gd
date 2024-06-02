@@ -22,10 +22,16 @@ func ui_movimiento():
 		
 	velocity = velocity.normalized() * vel
 
+#Conexion para que el player pierda vida
+func _on_enemigo_hit():
+	print("Mueltooooooooooooo")
+
+#Mezcladillo de cosas, movimiento y atacar por ahora
 func _physics_process(delta):
 	ui_movimiento()
 	move_and_slide()
 	if Input.is_action_pressed('ui_accept'):
 		$Espada.show()
 		$Espada/TiempoEspada.start()
+
 
