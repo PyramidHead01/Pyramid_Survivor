@@ -28,5 +28,5 @@ func _physics_process(delta):
 		$Espada.show()
 		$Espada/TiempoEspada.start()
 
-func _on_variables_comunes_hit():
+func _on_juego_hit():
 	print("Mueltooooooooooooo")

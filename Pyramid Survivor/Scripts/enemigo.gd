@@ -7,9 +7,9 @@ var mov_x = false
 func _on_area_2d_body_entered(body):
 	if(body.get("name")=="Player"):
 		VariablesComunes.danoPlayer()
+		VariablesComunes.matarEnemigo()
 		queue_free()
 
-		
 func _physics_process(delta):
 
 	#Calculamos la distancia a la que esta el player

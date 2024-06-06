@@ -21,8 +21,8 @@ VariablesComunes="*res://Scripts/variables_comunes.gd"
 
 [display]
 
-window/size/viewport_width=256
-window/size/viewport_height=240
+window/size/viewport_width=1024
+window/size/viewport_height=896
 
 [rendering]
 

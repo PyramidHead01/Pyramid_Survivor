@@ -6,11 +6,12 @@
 [ext_resource type="Script" path="res://Scripts/spawn_enemigo.gd" id="4_tf83g"]
 
 [node name="Juego" type="Node2D"]
-
-[node name="VariablesComunes" type="Node" parent="."]
 script = ExtResource("1_770qy")
 
+[node name="VariablesComunes" type="Node" parent="."]
+
 [node name="Player" parent="." instance=ExtResource("1_5awbe")]
+position = Vector2(510, 490)
 
 [node name="Spawner" type="Timer" parent="."]
 autostart = true
@@ -18,5 +19,9 @@ script = ExtResource("4_tf83g")
 
 [node name="InterfazSuperior" parent="." instance=ExtResource("4_7v2fb")]
 
-[connection signal="hit" from="VariablesComunes" to="Player" method="_on_variables_comunes_hit"]
+[node name="PorcentajeOleada" type="Timer" parent="."]
+autostart = true
+
+[connection signal="hit" from="." to="Player" method="_on_juego_hit"]
 [connection signal="timeout" from="Spawner" to="Spawner" method="_on_timeout"]
+[connection signal="timeout" from="PorcentajeOleada" to="." method="_on_porcentaje_oleada_timeout"]

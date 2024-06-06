@@ -8,6 +8,7 @@
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(133, 81)
+scale = Vector2(4, 4)
 script = ExtResource("1_gftd7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

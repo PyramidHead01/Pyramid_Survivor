@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0loh22ayo73"]
+[gd_scene load_steps=5 format=3 uid="uid://b0loh22ayo73"]
 
 [ext_resource type="Texture2D" uid="uid://coenipalidsgb" path="res://Sprites/piexelNegro.png" id="1_1i2jk"]
+[ext_resource type="Script" path="res://Scripts/interfaz_superior.gd" id="1_eduuo"]
 [ext_resource type="Texture2D" uid="uid://cxu6n1lprtvnu" path="res://Sprites/Place_Holders/placeholder_calavera.png" id="2_x2bwi"]
 [ext_resource type="Texture2D" uid="uid://dw01088ij367y" path="res://Sprites/Place_Holders/placeholder_vida.png" id="3_rg76w"]
 
@@ -11,85 +12,96 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_eduuo")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Fondo" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 256.0
-offset_bottom = 40.0
+offset_right = 1024.0
+offset_bottom = 160.0
 texture = ExtResource("1_1i2jk")
 
-[node name="Calavera" type="Node" parent="TextureRect"]
+[node name="Calavera" type="Node" parent="."]
 
-[node name="Label" type="Label" parent="TextureRect/Calavera"]
-offset_left = 21.0
-offset_right = 61.0
+[node name="Label" type="Label" parent="Calavera"]
+offset_left = 103.0
+offset_right = 143.0
 offset_bottom = 40.0
+scale = Vector2(4, 4)
 text = "X5"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/Calavera"]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 30.0
-offset_bottom = 30.0
+[node name="TextureRect" type="TextureRect" parent="Calavera"]
+offset_left = 42.0
+offset_top = 36.0
+offset_right = 62.0
+offset_bottom = 56.0
+scale = Vector2(4, 4)
 texture = ExtResource("2_x2bwi")
 
-[node name="Porcentaje" type="Label" parent="TextureRect"]
+[node name="Porcentaje" type="Label" parent="."]
 layout_mode = 0
-offset_left = 61.0
-offset_right = 101.0
+offset_left = 285.0
+offset_right = 325.0
 offset_bottom = 40.0
+scale = Vector2(4, 4)
 text = "25%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Memoria" type="Label" parent="TextureRect"]
-offset_left = 110.0
-offset_right = 153.0
+[node name="Memoria" type="Label" parent="."]
+layout_mode = 0
+offset_left = 510.0
+offset_right = 553.0
 offset_bottom = 40.0
+scale = Vector2(4, 4)
 text = "5/255
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Vida" type="Node" parent="TextureRect"]
+[node name="Vida" type="Node" parent="."]
 
-[node name="Vida_Label" type="Label" parent="TextureRect/Vida"]
-offset_left = 185.0
-offset_top = -11.0
-offset_right = 228.0
-offset_bottom = 29.0
+[node name="Vida_Label" type="Label" parent="Vida"]
+offset_left = 871.0
+offset_top = -35.0
+offset_right = 914.0
+offset_bottom = 5.0
+scale = Vector2(4, 4)
 text = "HP"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Vida_Sprite" type="Node" parent="TextureRect/Vida"]
+[node name="Vida_Sprite" type="Node" parent="Vida"]
 
-[node name="Vida_Sprite_01" type="TextureRect" parent="TextureRect/Vida/Vida_Sprite"]
-offset_left = 164.0
-offset_top = 26.0
-offset_right = 174.0
-offset_bottom = 37.0
+[node name="Vida_Sprite_01" type="TextureRect" parent="Vida/Vida_Sprite"]
+offset_left = 802.0
+offset_top = 100.0
+offset_right = 812.0
+offset_bottom = 111.0
+scale = Vector2(4, 4)
 texture = ExtResource("3_rg76w")
 
-[node name="Vida_Sprite_02" type="TextureRect" parent="TextureRect/Vida/Vida_Sprite"]
-offset_left = 184.0
-offset_top = 26.0
-offset_right = 194.0
-offset_bottom = 37.0
+[node name="Vida_Sprite_02" type="TextureRect" parent="Vida/Vida_Sprite"]
+offset_left = 862.0
+offset_top = 100.0
+offset_right = 872.0
+offset_bottom = 111.0
+scale = Vector2(4, 4)
 texture = ExtResource("3_rg76w")
 
-[node name="Vida_Sprite_03" type="TextureRect" parent="TextureRect/Vida/Vida_Sprite"]
-offset_left = 204.0
-offset_top = 26.0
-offset_right = 214.0
-offset_bottom = 37.0
+[node name="Vida_Sprite_03" type="TextureRect" parent="Vida/Vida_Sprite"]
+offset_left = 912.0
+offset_top = 100.0
+offset_right = 922.0
+offset_bottom = 111.0
+scale = Vector2(4, 4)
 texture = ExtResource("3_rg76w")
 
-[node name="Vida_Sprite_04" type="TextureRect" parent="TextureRect/Vida/Vida_Sprite"]
-offset_left = 224.0
-offset_top = 26.0
-offset_right = 234.0
-offset_bottom = 37.0
+[node name="Vida_Sprite_04" type="TextureRect" parent="Vida/Vida_Sprite"]
+offset_left = 964.0
+offset_top = 100.0
+offset_right = 974.0
+offset_bottom = 111.0
+scale = Vector2(4, 4)
 texture = ExtResource("3_rg76w")
