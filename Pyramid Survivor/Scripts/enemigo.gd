@@ -7,7 +7,7 @@ var mov_x = false
 func _on_area_2d_body_entered(body):
 	if(body.get("name")=="Player"):
 		VariablesComunes.danoPlayer()
-		VariablesComunes.matarEnemigo()
+		VariablesComunes.matarEnemigo(false)
 		queue_free()
 
 func _physics_process(delta):

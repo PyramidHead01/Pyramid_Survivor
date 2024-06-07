@@ -7,11 +7,16 @@ var vel_player = 400
 var vel_enemigo = 200
 
 #Vida Player
-var vida_player_max = 6
+var vida_player_max = 4
 var vida_player = vida_player_max
+var ruta_vida_spr='/root/Juego/InterfazSuperior/Vida/Vida_Sprite/vida_'
 
 #Senales
 signal hit
+
+#Bolsa huesos
+var huesos_act = 0
+var huesos_ind = 4
 
 #Total enemigos
 var max_enemigos = 255
@@ -27,8 +32,16 @@ func _process(delta):
 		print("MUERTE")
 
 func danoPlayer():
-	emit_signal("hit")
-	vida_player-=1
+	if vida_player>0:
+		
+		#Recibimos golpe
+		emit_signal("hit")
+		
+		#Restamos un corazon de vida
+		var vida_icono = get_node(ruta_vida_spr+str(vida_player-1))
+		vida_icono.hide()
+		vida_player-=1
+		
 	if vida_player==0:
 		muertePlayer()
 
@@ -50,9 +63,10 @@ func nuevoEnemigo(enemigo_base):
 	#Aumentamos limite
 	enemigos_cant+=enemigo_ind
 
-func matarEnemigo():
+func matarEnemigo(muerte_espada):
 	enemigos_cant-=enemigo_ind
-
+	if muerte_espada:
+		huesos_act+=huesos_ind
 
 func _on_porcentaje_oleada_timeout():
 	porcentaje_actual+=porcentaje_x_seg

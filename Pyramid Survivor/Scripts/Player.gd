@@ -17,7 +17,7 @@ func ui_movimiento():
 	elif Input.is_action_pressed('ui_up'):
 		velocity.y -= 1
 		rotation_degrees = 180
-		
+
 	velocity = velocity.normalized() * VariablesComunes.vel_player
 
 #Mezcladillo de cosas, movimiento y atacar por ahora

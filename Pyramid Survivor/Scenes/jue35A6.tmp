@@ -8,6 +8,8 @@
 [node name="Juego" type="Node2D"]
 script = ExtResource("1_770qy")
 
+[node name="asdas" type="Node" parent="."]
+
 [node name="Player" parent="." instance=ExtResource("1_5awbe")]
 position = Vector2(510, 490)
 

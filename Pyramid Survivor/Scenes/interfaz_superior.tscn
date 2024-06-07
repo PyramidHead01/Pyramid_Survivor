@@ -63,10 +63,10 @@ vertical_alignment = 1
 [node name="Vida" type="Node" parent="."]
 
 [node name="Vida_Label" type="Label" parent="Vida"]
-offset_left = 871.0
-offset_top = -35.0
-offset_right = 914.0
-offset_bottom = 5.0
+offset_left = 890.0
+offset_top = -45.0
+offset_right = 933.0
+offset_bottom = -5.0
 scale = Vector2(4, 4)
 text = "HP"
 horizontal_alignment = 1
@@ -74,34 +74,34 @@ vertical_alignment = 1
 
 [node name="Vida_Sprite" type="Node" parent="Vida"]
 
-[node name="Vida_Sprite_01" type="TextureRect" parent="Vida/Vida_Sprite"]
-offset_left = 802.0
-offset_top = 100.0
-offset_right = 812.0
-offset_bottom = 111.0
+[node name="vida_0" type="TextureRect" parent="Vida/Vida_Sprite"]
+offset_left = 840.0
+offset_top = 106.0
+offset_right = 850.0
+offset_bottom = 117.0
 scale = Vector2(4, 4)
 texture = ExtResource("3_rg76w")
 
-[node name="Vida_Sprite_02" type="TextureRect" parent="Vida/Vida_Sprite"]
-offset_left = 862.0
-offset_top = 100.0
-offset_right = 872.0
-offset_bottom = 111.0
+[node name="vida_1" type="TextureRect" parent="Vida/Vida_Sprite"]
+offset_left = 885.0
+offset_top = 105.0
+offset_right = 895.0
+offset_bottom = 116.0
 scale = Vector2(4, 4)
 texture = ExtResource("3_rg76w")
 
-[node name="Vida_Sprite_03" type="TextureRect" parent="Vida/Vida_Sprite"]
-offset_left = 912.0
-offset_top = 100.0
-offset_right = 922.0
-offset_bottom = 111.0
+[node name="vida_2" type="TextureRect" parent="Vida/Vida_Sprite"]
+offset_left = 930.0
+offset_top = 105.0
+offset_right = 940.0
+offset_bottom = 116.0
 scale = Vector2(4, 4)
 texture = ExtResource("3_rg76w")
 
-[node name="Vida_Sprite_04" type="TextureRect" parent="Vida/Vida_Sprite"]
-offset_left = 964.0
-offset_top = 100.0
-offset_right = 974.0
-offset_bottom = 111.0
+[node name="vida_3" type="TextureRect" parent="Vida/Vida_Sprite"]
+offset_left = 975.0
+offset_top = 105.0
+offset_right = 985.0
+offset_bottom = 116.0
 scale = Vector2(4, 4)
 texture = ExtResource("3_rg76w")
