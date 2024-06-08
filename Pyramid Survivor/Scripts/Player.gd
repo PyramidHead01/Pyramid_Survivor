@@ -24,6 +24,8 @@ func ui_movimiento():
 func _physics_process(delta):
 	ui_movimiento()
 	move_and_slide()
+	if VariablesComunes.muertePlayer:
+		queue_free()
 	if Input.is_action_pressed('ui_accept'):
 		$Espada.show()
 		$Espada/TiempoEspada.start()

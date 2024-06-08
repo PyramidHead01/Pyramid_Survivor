@@ -17,10 +17,10 @@ var vel_enemigo = 200
 #Vida Player
 var vida_player_max = 4
 var vida_player = vida_player_max
-var ruta_vida_spr='/root/Juego/InterfazSuperior/Vida/Vida_Sprite/vida_'
+var ruta_vida_spr='/root/Juego/InterfazSuperior/Vida/Vida_Sprite'
 
 #Senales
-signal muertePlayer
+var muertePlayer = false
 signal entreOleadas
 
 #Bolsa huesos
@@ -30,11 +30,11 @@ var huesos_ind = 4
 #Total enemigos
 var max_enemigos = 255
 var enemigos_cant = 0
-var enemigo_ind = 140
+var enemigo_ind = 1
 
 #Porcentaje
 var porcentaje_actual = 0
-var porcentaje_x_seg = 1
+var porcentaje_x_seg = 25
 
 #Oleadas
 var nOleadas = 0 
@@ -44,7 +44,7 @@ var nOleadas = 0
 ###########################
 
 func _ready():
-	get_node('/root/Juego/Oleada').text = ""
+	get_node('/root/Juego/EntreOleadas/LabelOleada').text = ""
 func _process(delta):
 	if max_enemigos < enemigos_cant:
 		finOleada(false,"OUT OF MEMORY ERROR"+str(nOleadas))
@@ -53,16 +53,15 @@ func _process(delta):
 func danoPlayer():
 	if vida_player>0:
 		
-		#Recibimos golpe
-		emit_signal("hit")
-		
 		#Restamos un corazon de vida
-		var vida_icono = get_node(ruta_vida_spr+str(vida_player-1))
+		var vida_icono = get_node(ruta_vida_spr+"/vida_"+str(vida_player-1))
 		vida_icono.hide()
 		vida_player-=1
 		
 	if vida_player==0:
 		finOleada(false,"GAME OVER:"+str(nOleadas))
+func matarPlayer(node):
+	node.queue_free()
 
 #Enemigos
 func nuevoEnemigo(enemigo_base):
@@ -79,43 +78,56 @@ func nuevoEnemigo(enemigo_base):
 	
 	#Aumentamos limite
 	enemigos_cant+=enemigo_ind
+	#$InterfazSuperior/Memoria.text = str(enemigos_cant)+"/257"
 func matarEnemigo(muerte_espada):
 	enemigos_cant-=enemigo_ind
 	if muerte_espada:
 		huesos_act+=huesos_ind
+	#$InterfazSuperior/Memoria.text = str(enemigos_cant)+"/257"
 func matarEnemigosTODOS():
 	get_node('/root/Juego/Spawner').stop()
+	limpiarDatosInterfaz()
 	for enemigos in get_node('/root/VariablesComunes').get_children ():
 		enemigos.queue_free()
-	pass
+	
+	enemigos_cant = 0
+	
+	$InterfazSuperior/Porcentaje.text="0%"
 
 #Oleadas
 func limpiarDatosInterfaz():
+
+	vida_player = vida_player_max
 	porcentaje_actual = 0
 	enemigos_cant = 0
+	for child in get_node(ruta_vida_spr).get_children():
+		child.show()
+	
 	
 func _on_porcentaje_oleada_timeout():
 	porcentaje_actual+=porcentaje_x_seg
 	$InterfazSuperior/Porcentaje.text=str(porcentaje_actual)+"%"
 	if porcentaje_actual >= 100:
 		finOleada(true,"END STAGE: "+str(nOleadas))
-		
 func finOleada(ganado, mensaje):
-	limpiarDatosInterfaz()
+
 	matarEnemigosTODOS()
 	
 	get_node('/root/Juego/PorcentajeOleada').stop()
-	
+
 	var labelOleada=get_node('/root/Juego/EntreOleadas/LabelOleada')
 	labelOleada.text=mensaje
 	
 	if !ganado:
-		print("envio")
-		emit_signal("muertePlayer")
+		muertePlayer = true
 	else:
-		emit_signal("entreOleadas")
+		entreOleadas.emit()
 		nOleadas += 1
-		
+
 	labelOleada.show()
+
 func seguirOleada():
-	print("AAAAAAAAAAA")
+
+	get_node('/root/Juego/PorcentajeOleada').start()
+	get_node('/root/Juego/Spawner').start()
+	limpiarDatosInterfaz()
