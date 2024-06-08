@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bp0encacya66p"]
+[gd_scene load_steps=6 format=3 uid="uid://bp0encacya66p"]
 
 [ext_resource type="PackedScene" uid="uid://bybax5kfs32qj" path="res://Scenes/player.tscn" id="1_5awbe"]
 [ext_resource type="Script" path="res://Scripts/variables_comunes.gd" id="1_770qy"]
 [ext_resource type="PackedScene" uid="uid://b0loh22ayo73" path="res://Scenes/interfaz_superior.tscn" id="4_7v2fb"]
 [ext_resource type="Script" path="res://Scripts/spawn_enemigo.gd" id="4_tf83g"]
-[ext_resource type="PackedScene" uid="uid://brewgxhcwxuiw" path="res://Scenes/tienda.tscn" id="6_er558"]
 [ext_resource type="PackedScene" uid="uid://djlxg4jk0xhtp" path="res://Scenes/entre_oleadas.tscn" id="6_yst2u"]
 
 [node name="Juego" type="Node2D"]
@@ -23,8 +22,6 @@ script = ExtResource("4_tf83g")
 autostart = true
 
 [node name="EntreOleadas" parent="." instance=ExtResource("6_yst2u")]
-
-[node name="Tienda" parent="." instance=ExtResource("6_er558")]
 
 [connection signal="entreOleadas" from="." to="EntreOleadas" method="_on_juego_entre_oleadas"]
 [connection signal="timeout" from="Spawner" to="Spawner" method="_on_timeout"]

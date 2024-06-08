@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://brewgxhcwxuiw"]
+[gd_scene load_steps=4 format=3 uid="uid://brewgxhcwxuiw"]
 
+[ext_resource type="Script" path="res://Scripts/tienda.gd" id="1_m8wlm"]
 [ext_resource type="Texture2D" uid="uid://coenipalidsgb" path="res://Sprites/piexelNegro.png" id="1_xvngi"]
 [ext_resource type="FontFile" uid="uid://b6d4iwri5lpd5" path="res://FontNES.ttf" id="2_wwvr1"]
 
 [node name="Tienda" type="Node2D"]
+script = ExtResource("1_m8wlm")
 
 [node name="TiendaUI" type="Control" parent="."]
 layout_mode = 3
@@ -77,9 +79,9 @@ theme_override_fonts/font = ExtResource("2_wwvr1")
 theme_override_font_sizes/font_size = 8
 text = "EXIT"
 
-[node name="Node" type="Node" parent="TiendaUI"]
+[node name="Precios" type="Node2D" parent="TiendaUI"]
 
-[node name="precioVida" type="Label" parent="TiendaUI/Node"]
+[node name="precioVida" type="Label" parent="TiendaUI/Precios"]
 offset_left = 817.0
 offset_top = 226.0
 offset_right = 913.0
@@ -88,7 +90,7 @@ theme_override_fonts/font = ExtResource("2_wwvr1")
 theme_override_font_sizes/font_size = 32
 text = "x15"
 
-[node name="precioCalavera" type="Label" parent="TiendaUI/Node"]
+[node name="precioCalavera" type="Label" parent="TiendaUI/Precios"]
 offset_left = 817.0
 offset_top = 357.0
 offset_right = 913.0
@@ -97,7 +99,7 @@ theme_override_fonts/font = ExtResource("2_wwvr1")
 theme_override_font_sizes/font_size = 32
 text = "x15"
 
-[node name="precioTiempo" type="Label" parent="TiendaUI/Node"]
+[node name="precioTiempo" type="Label" parent="TiendaUI/Precios"]
 offset_left = 817.0
 offset_top = 496.0
 offset_right = 913.0
@@ -106,7 +108,7 @@ theme_override_fonts/font = ExtResource("2_wwvr1")
 theme_override_font_sizes/font_size = 32
 text = "x15"
 
-[node name="precioMemoria" type="Label" parent="TiendaUI/Node"]
+[node name="precioMemoria" type="Label" parent="TiendaUI/Precios"]
 offset_left = 817.0
 offset_top = 649.0
 offset_right = 913.0
@@ -114,3 +116,9 @@ offset_bottom = 688.0
 theme_override_fonts/font = ExtResource("2_wwvr1")
 theme_override_font_sizes/font_size = 32
 text = "x15"
+
+[connection signal="pressed" from="TiendaUI/CenterContainer/HBoxContainer/botones/vidaBoton" to="." method="_on_vida_boton_pressed"]
+[connection signal="pressed" from="TiendaUI/CenterContainer/HBoxContainer/botones/calaveraBoton" to="." method="_on_calavera_boton_pressed"]
+[connection signal="pressed" from="TiendaUI/CenterContainer/HBoxContainer/botones/tiempoBoton" to="." method="_on_tiempo_boton_pressed"]
+[connection signal="pressed" from="TiendaUI/CenterContainer/HBoxContainer/botones/memoriaBoton" to="." method="_on_memoria_boton_pressed"]
+[connection signal="pressed" from="TiendaUI/CenterContainer/HBoxContainer/botones/salirBoton" to="." method="_on_salir_boton_pressed"]

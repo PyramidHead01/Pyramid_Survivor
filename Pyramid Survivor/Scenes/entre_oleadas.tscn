@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://djlxg4jk0xhtp"]
+[gd_scene load_steps=6 format=3 uid="uid://djlxg4jk0xhtp"]
 
 [ext_resource type="Texture2D" uid="uid://cbygcmwistt1o" path="res://Sprites/Place_Holders/placeholder_botonOleada.png" id="1_3e6oi"]
 [ext_resource type="Script" path="res://Scripts/entre_oleadas.gd" id="1_jwmne"]
+[ext_resource type="Texture2D" uid="uid://b31dpxhuu6k66" path="res://Sprites/Place_Holders/placeholder_botonTienda.png" id="3_qrc3w"]
+[ext_resource type="PackedScene" uid="uid://brewgxhcwxuiw" path="res://Scenes/tienda.tscn" id="4_fxxvb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hfcr"]
 
@@ -16,6 +18,16 @@ scale = Vector2(4, 4)
 texture = ExtResource("1_3e6oi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="botonSiguienteOleada"]
+shape = SubResource("RectangleShape2D_4hfcr")
+
+[node name="botonTienda" type="Area2D" parent="."]
+position = Vector2(744, 356)
+scale = Vector2(4, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="botonTienda"]
+texture = ExtResource("3_qrc3w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="botonTienda"]
 shape = SubResource("RectangleShape2D_4hfcr")
 
 [node name="LabelOleada" type="Label" parent="."]
@@ -35,4 +47,9 @@ text = "END STAGE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Tienda" parent="." instance=ExtResource("4_fxxvb")]
+visible = false
+
+[connection signal="hoverBotonTienda" from="." to="Tienda" method="_on_entre_oleadas_hover_boton_tienda"]
 [connection signal="area_entered" from="botonSiguienteOleada" to="." method="_on_boton_siguiente_oleada_area_entered"]
+[connection signal="area_entered" from="botonTienda" to="." method="_on_boton_tienda_area_entered"]

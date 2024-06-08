@@ -12,6 +12,7 @@ var posicion_player = Vector2(0,0)
 
 #Velocidades
 var vel_player = 400
+var vel_player_almacenada = vel_player
 var vel_enemigo = 200
 
 #Vida Player
@@ -24,7 +25,7 @@ var muertePlayer = false
 signal entreOleadas
 
 #Bolsa huesos
-var huesos_act = 0
+var huesos_act = 200
 var huesos_ind = 4
 
 #Total enemigos
@@ -127,3 +128,13 @@ func seguirOleada():
 	get_node('/root/Juego/PorcentajeOleada').start()
 	get_node('/root/Juego/Spawner').start()
 	limpiarDatosInterfaz()
+
+#Tienda
+func compraAumentoVida():
+	pass
+func compraAumentoCalavera():
+	pass
+func compraAumentoTiempo():
+	pass
+func compraAumentoMemoria():
+	pass
