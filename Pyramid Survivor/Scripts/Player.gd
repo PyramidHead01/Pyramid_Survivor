@@ -28,5 +28,6 @@ func _physics_process(delta):
 		$Espada.show()
 		$Espada/TiempoEspada.start()
 
-func _on_juego_hit():
-	print("Mueltooooooooooooo")
+func _on_juego_muerte_player():
+	print("FASDASD")
+	queue_free()

@@ -45,7 +45,7 @@ offset_left = 285.0
 offset_right = 325.0
 offset_bottom = 40.0
 scale = Vector2(4, 4)
-text = "25%"
+text = "0%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -55,7 +55,7 @@ offset_left = 510.0
 offset_right = 553.0
 offset_bottom = 40.0
 scale = Vector2(4, 4)
-text = "5/255
+text = "0/255
 "
 horizontal_alignment = 1
 vertical_alignment = 1
