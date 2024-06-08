@@ -78,22 +78,19 @@ func nuevoEnemigo(enemigo_base):
 	
 	#Aumentamos limite
 	enemigos_cant+=enemigo_ind
-	#$InterfazSuperior/Memoria.text = str(enemigos_cant)+"/257"
+	
+	#Escribimos el nuevo valor
+	get_node('/root/Juego/InterfazSuperior/Memoria').text = str(VariablesComunes.enemigos_cant)+"/255"
 func matarEnemigo(muerte_espada):
 	enemigos_cant-=enemigo_ind
 	if muerte_espada:
 		huesos_act+=huesos_ind
-	#$InterfazSuperior/Memoria.text = str(enemigos_cant)+"/257"
 func matarEnemigosTODOS():
 	get_node('/root/Juego/Spawner').stop()
 	limpiarDatosInterfaz()
 	for enemigos in get_node('/root/VariablesComunes').get_children ():
 		enemigos.queue_free()
 	
-	enemigos_cant = 0
-	
-	$InterfazSuperior/Porcentaje.text="0%"
-
 #Oleadas
 func limpiarDatosInterfaz():
 
@@ -102,8 +99,6 @@ func limpiarDatosInterfaz():
 	enemigos_cant = 0
 	for child in get_node(ruta_vida_spr).get_children():
 		child.show()
-	
-	
 func _on_porcentaje_oleada_timeout():
 	porcentaje_actual+=porcentaje_x_seg
 	$InterfazSuperior/Porcentaje.text=str(porcentaje_actual)+"%"
@@ -125,9 +120,10 @@ func finOleada(ganado, mensaje):
 		nOleadas += 1
 
 	labelOleada.show()
-
 func seguirOleada():
-
+	get_node('/root/Juego/InterfazSuperior/Porcentaje').text="0%"
+	get_node('/root/Juego/InterfazSuperior/Memoria').text = "0/255"
+	
 	get_node('/root/Juego/PorcentajeOleada').start()
 	get_node('/root/Juego/Spawner').start()
 	limpiarDatosInterfaz()
