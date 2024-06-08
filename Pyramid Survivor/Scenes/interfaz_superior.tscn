@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0loh22ayo73"]
+[gd_scene load_steps=6 format=3 uid="uid://b0loh22ayo73"]
 
 [ext_resource type="Texture2D" uid="uid://coenipalidsgb" path="res://Sprites/piexelNegro.png" id="1_1i2jk"]
 [ext_resource type="Script" path="res://Scripts/interfaz_superior.gd" id="1_eduuo"]
 [ext_resource type="Texture2D" uid="uid://cxu6n1lprtvnu" path="res://Sprites/Place_Holders/placeholder_calavera.png" id="2_x2bwi"]
+[ext_resource type="FontFile" uid="uid://b6d4iwri5lpd5" path="res://FontNES.ttf" id="3_aba3s"]
 [ext_resource type="Texture2D" uid="uid://dw01088ij367y" path="res://Sprites/Place_Holders/placeholder_vida.png" id="3_rg76w"]
 
 [node name="InterfazSuperior" type="Control"]
@@ -23,10 +24,12 @@ texture = ExtResource("1_1i2jk")
 [node name="Calavera" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="Calavera"]
-offset_left = 103.0
-offset_right = 143.0
-offset_bottom = 40.0
-scale = Vector2(4, 4)
+offset_left = 162.0
+offset_top = 54.0
+offset_right = 222.0
+offset_bottom = 91.0
+theme_override_fonts/font = ExtResource("3_aba3s")
+theme_override_font_sizes/font_size = 32
 text = "X5"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -41,20 +44,24 @@ texture = ExtResource("2_x2bwi")
 
 [node name="Porcentaje" type="Label" parent="."]
 layout_mode = 0
-offset_left = 285.0
-offset_right = 325.0
-offset_bottom = 40.0
-scale = Vector2(4, 4)
+offset_left = 383.0
+offset_top = 54.0
+offset_right = 423.0
+offset_bottom = 94.0
+theme_override_fonts/font = ExtResource("3_aba3s")
+theme_override_font_sizes/font_size = 32
 text = "0%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Memoria" type="Label" parent="."]
 layout_mode = 0
-offset_left = 510.0
-offset_right = 553.0
-offset_bottom = 40.0
-scale = Vector2(4, 4)
+offset_left = 580.0
+offset_top = 54.0
+offset_right = 660.0
+offset_bottom = 94.0
+theme_override_fonts/font = ExtResource("3_aba3s")
+theme_override_font_sizes/font_size = 32
 text = "0/255
 "
 horizontal_alignment = 1
@@ -63,11 +70,12 @@ vertical_alignment = 1
 [node name="Vida" type="Node" parent="."]
 
 [node name="Vida_Label" type="Label" parent="Vida"]
-offset_left = 890.0
-offset_top = -45.0
-offset_right = 933.0
-offset_bottom = -5.0
-scale = Vector2(4, 4)
+offset_left = 957.0
+offset_top = 3.0
+offset_right = 1021.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_aba3s")
+theme_override_font_sizes/font_size = 32
 text = "HP"
 horizontal_alignment = 1
 vertical_alignment = 1

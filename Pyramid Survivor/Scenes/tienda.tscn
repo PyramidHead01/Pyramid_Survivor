@@ -1,0 +1,116 @@
+[gd_scene load_steps=3 format=3 uid="uid://brewgxhcwxuiw"]
+
+[ext_resource type="Texture2D" uid="uid://coenipalidsgb" path="res://Sprites/piexelNegro.png" id="1_xvngi"]
+[ext_resource type="FontFile" uid="uid://b6d4iwri5lpd5" path="res://FontNES.ttf" id="2_wwvr1"]
+
+[node name="Tienda" type="Node2D"]
+
+[node name="TiendaUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1024.0
+offset_bottom = 896.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="TiendaUI"]
+layout_mode = 0
+offset_top = 160.0
+offset_right = 1024.0
+offset_bottom = 896.0
+texture = ExtResource("1_xvngi")
+
+[node name="CenterContainer" type="CenterContainer" parent="TiendaUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -288.0
+offset_right = -366.0
+offset_bottom = -183.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7, 7)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TiendaUI/CenterContainer"]
+layout_mode = 2
+
+[node name="botones" type="VBoxContainer" parent="TiendaUI/CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="vidaBoton" type="Button" parent="TiendaUI/CenterContainer/HBoxContainer/botones"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_wwvr1")
+theme_override_font_sizes/font_size = 8
+text = "HP UP"
+
+[node name="calaveraBoton" type="Button" parent="TiendaUI/CenterContainer/HBoxContainer/botones"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wwvr1")
+theme_override_font_sizes/font_size = 8
+text = "SKULLS UP"
+
+[node name="tiempoBoton" type="Button" parent="TiendaUI/CenterContainer/HBoxContainer/botones"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wwvr1")
+theme_override_font_sizes/font_size = 8
+text = "% UP"
+
+[node name="memoriaBoton" type="Button" parent="TiendaUI/CenterContainer/HBoxContainer/botones"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wwvr1")
+theme_override_font_sizes/font_size = 8
+text = "X/255 UP"
+
+[node name="salirBoton" type="Button" parent="TiendaUI/CenterContainer/HBoxContainer/botones"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wwvr1")
+theme_override_font_sizes/font_size = 8
+text = "EXIT"
+
+[node name="Node" type="Node" parent="TiendaUI"]
+
+[node name="precioVida" type="Label" parent="TiendaUI/Node"]
+offset_left = 817.0
+offset_top = 226.0
+offset_right = 913.0
+offset_bottom = 265.0
+theme_override_fonts/font = ExtResource("2_wwvr1")
+theme_override_font_sizes/font_size = 32
+text = "x15"
+
+[node name="precioCalavera" type="Label" parent="TiendaUI/Node"]
+offset_left = 817.0
+offset_top = 357.0
+offset_right = 913.0
+offset_bottom = 396.0
+theme_override_fonts/font = ExtResource("2_wwvr1")
+theme_override_font_sizes/font_size = 32
+text = "x15"
+
+[node name="precioTiempo" type="Label" parent="TiendaUI/Node"]
+offset_left = 817.0
+offset_top = 496.0
+offset_right = 913.0
+offset_bottom = 535.0
+theme_override_fonts/font = ExtResource("2_wwvr1")
+theme_override_font_sizes/font_size = 32
+text = "x15"
+
+[node name="precioMemoria" type="Label" parent="TiendaUI/Node"]
+offset_left = 817.0
+offset_top = 649.0
+offset_right = 913.0
+offset_bottom = 688.0
+theme_override_fonts/font = ExtResource("2_wwvr1")
+theme_override_font_sizes/font_size = 32
+text = "x15"
