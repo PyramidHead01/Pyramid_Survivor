@@ -40,12 +40,23 @@ var porcentaje_x_seg = 25
 #Oleadas
 var nOleadas = 0 
 
+
+###########################
+########INSTANCIACIONES####
+###########################
+
+
+@onready
+var entre_oleadas = preload("res://Scenes/entre_oleadas.tscn")
+
+
 ###########################
 ########FUNCIONES##########
 ###########################
 
 func _ready():
-	get_node('/root/Juego/EntreOleadas/LabelOleada').text = ""
+	pass
+	#get_node('/root/Juego/EntreOleadas/LabelOleada').text = ""
 func _process(delta):
 	if max_enemigos < enemigos_cant:
 		finOleada(false,"OUT OF MEMORY ERROR"+str(nOleadas))
@@ -107,12 +118,15 @@ func _on_porcentaje_oleada_timeout():
 		finOleada(true,"END STAGE: "+str(nOleadas))
 func finOleada(ganado, mensaje):
 
+
+	get_node('/root/Juego/PorcentajeOleada').stop()
 	matarEnemigosTODOS()
 	
-	get_node('/root/Juego/PorcentajeOleada').stop()
-
+	var oleada = entre_oleadas.instantiate()
+	add_child(oleada)
+	
 	var labelOleada=get_node('/root/Juego/EntreOleadas/LabelOleada')
-	labelOleada.text=mensaje
+	#labelOleada.text=mensaje
 	
 	if !ganado:
 		muertePlayer = true
@@ -120,7 +134,7 @@ func finOleada(ganado, mensaje):
 		entreOleadas.emit()
 		nOleadas += 1
 
-	labelOleada.show()
+	oleada.show()
 func seguirOleada():
 	get_node('/root/Juego/InterfazSuperior/Porcentaje').text="0%"
 	get_node('/root/Juego/InterfazSuperior/Memoria').text = "0/255"

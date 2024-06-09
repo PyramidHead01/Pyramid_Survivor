@@ -51,5 +51,5 @@ vertical_alignment = 1
 visible = false
 
 [connection signal="hoverBotonTienda" from="." to="Tienda" method="_on_entre_oleadas_hover_boton_tienda"]
-[connection signal="area_entered" from="botonSiguienteOleada" to="." method="_on_boton_siguiente_oleada_area_entered"]
-[connection signal="area_entered" from="botonTienda" to="." method="_on_boton_tienda_area_entered"]
+[connection signal="body_entered" from="botonSiguienteOleada" to="." method="_on_boton_siguiente_oleada_body_entered"]
+[connection signal="body_entered" from="botonTienda" to="." method="_on_boton_tienda_body_entered"]
