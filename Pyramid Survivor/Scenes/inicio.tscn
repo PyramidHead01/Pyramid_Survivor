@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo2frwp4o8t40"]
+
+[ext_resource type="Script" path="res://Scripts/inicio.gd" id="1_heod4"]
+[ext_resource type="FontFile" uid="uid://b6d4iwri5lpd5" path="res://FontNES.ttf" id="1_mryd2"]
+[ext_resource type="Texture2D" uid="uid://coenipalidsgb" path="res://Sprites/piexelNegro.png" id="2_5te00"]
+
+[node name="menuInicio" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_heod4")
+
+[node name="Mensaje" type="Node2D" parent="."]
+
+[node name="MensajeFondo" type="TextureRect" parent="Mensaje"]
+offset_right = 1024.0
+offset_bottom = 896.0
+texture = ExtResource("2_5te00")
+
+[node name="Label" type="Label" parent="Mensaje"]
+offset_right = 1024.0
+offset_bottom = 896.0
+theme_override_fonts/font = ExtResource("1_mryd2")
+text = "HOLA HOLA HOLA HOLA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OpcionesInicio" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_top = 622.0
+offset_right = 1024.0
+offset_bottom = 896.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OpcionesInicio"]
+layout_mode = 2
+
+[node name="play_bot" type="Button" parent="OpcionesInicio/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mryd2")
+text = "PLAY"
+
+[node name="instr_bot" type="Button" parent="OpcionesInicio/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mryd2")
+text = "Instructions"
+
+[node name="cred_bot" type="Button" parent="OpcionesInicio/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mryd2")
+text = "CREDITS"
+
+[node name="TimerRickRoll" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+
+[connection signal="pressed" from="OpcionesInicio/VBoxContainer/play_bot" to="." method="_on_play_bot_pressed"]
+[connection signal="toggled" from="OpcionesInicio/VBoxContainer/play_bot" to="." method="_on_play_bot_toggled"]
+[connection signal="pressed" from="OpcionesInicio/VBoxContainer/instr_bot" to="." method="_on_instr_bot_pressed"]
+[connection signal="pressed" from="OpcionesInicio/VBoxContainer/cred_bot" to="." method="_on_cred_bot_pressed"]
+[connection signal="timeout" from="TimerRickRoll" to="." method="_on_timer_timeout"]

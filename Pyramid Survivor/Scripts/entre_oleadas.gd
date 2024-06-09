@@ -22,6 +22,5 @@ func _on_boton_tienda_body_entered(body):
 		emit_signal("hoverBotonTienda")
 func _on_boton_siguiente_oleada_body_entered(body):
 	if body.get("name")=="Player":
-		
 		VariablesComunes.seguirOleada()
 		apagarEntreOleadas()

@@ -113,3 +113,39 @@ offset_right = 985.0
 offset_bottom = 116.0
 scale = Vector2(4, 4)
 texture = ExtResource("3_rg76w")
+
+[node name="vida_4" type="TextureRect" parent="Vida/Vida_Sprite"]
+visible = false
+offset_left = 840.0
+offset_top = 55.0
+offset_right = 850.0
+offset_bottom = 66.0
+scale = Vector2(4, 4)
+texture = ExtResource("3_rg76w")
+
+[node name="vida_5" type="TextureRect" parent="Vida/Vida_Sprite"]
+visible = false
+offset_left = 885.0
+offset_top = 54.0
+offset_right = 895.0
+offset_bottom = 65.0
+scale = Vector2(4, 4)
+texture = ExtResource("3_rg76w")
+
+[node name="vida_6" type="TextureRect" parent="Vida/Vida_Sprite"]
+visible = false
+offset_left = 930.0
+offset_top = 54.0
+offset_right = 940.0
+offset_bottom = 65.0
+scale = Vector2(4, 4)
+texture = ExtResource("3_rg76w")
+
+[node name="vida_7" type="TextureRect" parent="Vida/Vida_Sprite"]
+visible = false
+offset_left = 975.0
+offset_top = 54.0
+offset_right = 985.0
+offset_bottom = 65.0
+scale = Vector2(4, 4)
+texture = ExtResource("3_rg76w")
