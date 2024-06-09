@@ -53,7 +53,6 @@ var entre_oleadas = preload("res://Scenes/entre_oleadas.tscn")
 	
 func _ready():
 	pass
-	#get_node('/root/Juego/EntreOleadas/LabelOleada').text = ""
 func _process(delta):
 	print("B" + str(porcentaje_x_seg))
 	if max_enemigos < enemigos_cant:

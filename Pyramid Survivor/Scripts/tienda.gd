@@ -38,7 +38,6 @@ func comprar(id):
 			3:
 				VariablesComunes.compraAumentoMemoria()
 
-
 func _on_salir_boton_pressed():
 	VariablesComunes.vel_player = VariablesComunes.vel_player_almacenada
 	hide()
