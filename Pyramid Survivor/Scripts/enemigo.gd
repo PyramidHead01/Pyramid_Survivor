@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var moverse = false
+var moverse = true
 
 var dist = Vector2.ZERO
 var mov_x = false

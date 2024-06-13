@@ -81,7 +81,13 @@ func nuevoEnemigo(enemigo_base):
 	#Creamos una posicion aleatoria
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	var pos_x = rng.randi_range(0, 984)
+	var int_pos = rng.randi_range(0,1)
+	var pos_x = 0
+	if int_pos == 0:
+		pos_x = 0
+	else:
+		pos_x = 984
+	#var pos_x = rng.randi_range(0, 984)
 	var pos_y = rng.randi_range(0, 960)
 	
 	#Instanciamos un enemigo, se hace hijo, y se pone en una pos random
@@ -103,11 +109,9 @@ func matarEnemigosTODOS():
 	limpiarDatosInterfaz()
 	for enemigos in get_node(rutaJuego+'/Enemigos').get_children ():
 		enemigos.queue_free()
-	
+
 #Oleadas
 func limpiarDatosInterfaz():
-	#print("VIDA_MAX: "+str(vida_player_max))
-	#print("VIDA: "+str(vida_player))
 	vida_player = vida_player_max
 	porcentaje_actual = 0
 	enemigos_cant = 0
@@ -124,7 +128,6 @@ func finOleada(ganado, mensaje):
 	get_node(rutaJuego+'/PorcentajeOleada').stop()
 	matarEnemigosTODOS()
 	
-	#var oleada = entre_oleadas.instantiate()
 	var oleada = get_node(rutaJuego+'/EntreOleadas') 
 	
 	var labelOleada=get_node(rutaJuego+'/EntreOleadas/LabelOleada')
@@ -144,30 +147,9 @@ func seguirOleada():
 	limpiarDatosInterfaz()
 
 #Tienda
-"""
-func compraAumentoVida():
-	print("Aumento Vida")
-	pass
-func compraAumentoCalavera():
-	huesos_tienda_n = 1
-	#huesos_ind += huesos_aumento
-func compraAumentoMemoria():
-	print(enemigos_cant)
-	enemigos_tienda_n += 1
-	#enemigos_cant -= enemigos_aumento
-	print(enemigos_cant)
-"""
-
-#Tienda
 func interfaz_huesos():
 	huesos_act+=(huesos_ind+(huesos_aumento*huesos_n))
-	pass
-
 func interfaz_porcentaje():
 	porcentaje_actual+=(porcentaje_x_seg+(porcentaje_aumento*porcentaje_n))
-	pass
-
 func interfaz_enemigos():
-	#enemigos_cant+=enemigo_ind
 	enemigos_cant+=enemigo_ind+(enemigos_aumento*enemigos_n)
-	pass
