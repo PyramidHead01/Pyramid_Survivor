@@ -25,9 +25,12 @@ func _on_play_bot_pressed():
 	var scene_instance = scene.instantiate()
 	add_child(scene_instance)
 	$OpcionesInicio.hide()
+	$TimerRickRoll.stop()
 func _on_cred_bot_pressed():
+	$TimerRickRoll.stop()
 	print("CREDITOS")
 func _on_instr_bot_pressed():
+	$TimerRickRoll.stop()
 	print("INSTRUCCIONES")
 
 func _on_timer_timeout():
