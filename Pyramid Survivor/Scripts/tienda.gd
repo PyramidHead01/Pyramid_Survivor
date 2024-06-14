@@ -34,6 +34,11 @@ func _on_tiempo_boton_pressed():
 func _on_memoria_boton_pressed():
 	compra.emit(3)
 	#comprar(3, porcentaje_n)
+
+func _on_dano_boton_pressed():
+	compra.emit(4)
+
+	
 """
 func comprar(id):
 	var precio = get_node("TiendaUI/Precios").get_child(id)
@@ -59,4 +64,5 @@ func comprar(id):
 func _on_salir_boton_pressed():
 	VariablesComunes.vel_player = VariablesComunes.vel_player_almacenada
 	hide()
+
 

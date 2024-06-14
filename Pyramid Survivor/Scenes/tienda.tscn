@@ -33,16 +33,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -512.0
-offset_top = -288.0
-offset_right = -366.0
-offset_bottom = -183.0
+offset_left = -395.0
+offset_top = -249.0
+offset_right = -249.0
+offset_bottom = -127.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(7, 7)
+scale = Vector2(5, 5)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TiendaUI/CenterContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="botones" type="VBoxContainer" parent="TiendaUI/CenterContainer/HBoxContainer"]
 layout_mode = 2
@@ -54,6 +55,14 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_wwvr1")
 theme_override_font_sizes/font_size = 8
 text = "HP UP"
+
+[node name="danoBoton" type="Button" parent="TiendaUI/CenterContainer/HBoxContainer/botones"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_wwvr1")
+theme_override_font_sizes/font_size = 8
+text = "DMG UP"
 
 [node name="calaveraBoton" type="Button" parent="TiendaUI/CenterContainer/HBoxContainer/botones"]
 layout_mode = 2
@@ -82,42 +91,52 @@ text = "EXIT"
 [node name="Precios" type="Node2D" parent="TiendaUI"]
 
 [node name="precioVida" type="Label" parent="TiendaUI/Precios"]
-offset_left = 817.0
-offset_top = 226.0
-offset_right = 913.0
-offset_bottom = 265.0
+offset_left = 847.0
+offset_top = 235.0
+offset_right = 943.0
+offset_bottom = 274.0
+theme_override_fonts/font = ExtResource("2_wwvr1")
+theme_override_font_sizes/font_size = 32
+text = "x15"
+
+[node name="precioDano" type="Label" parent="TiendaUI/Precios"]
+offset_left = 847.0
+offset_top = 313.0
+offset_right = 943.0
+offset_bottom = 352.0
 theme_override_fonts/font = ExtResource("2_wwvr1")
 theme_override_font_sizes/font_size = 32
 text = "x15"
 
 [node name="precioCalavera" type="Label" parent="TiendaUI/Precios"]
-offset_left = 817.0
-offset_top = 357.0
-offset_right = 913.0
-offset_bottom = 396.0
+offset_left = 847.0
+offset_top = 418.0
+offset_right = 943.0
+offset_bottom = 457.0
 theme_override_fonts/font = ExtResource("2_wwvr1")
 theme_override_font_sizes/font_size = 32
 text = "x15"
 
 [node name="precioTiempo" type="Label" parent="TiendaUI/Precios"]
-offset_left = 817.0
-offset_top = 496.0
-offset_right = 913.0
-offset_bottom = 535.0
+offset_left = 847.0
+offset_top = 523.0
+offset_right = 943.0
+offset_bottom = 562.0
 theme_override_fonts/font = ExtResource("2_wwvr1")
 theme_override_font_sizes/font_size = 32
 text = "x15"
 
 [node name="precioMemoria" type="Label" parent="TiendaUI/Precios"]
-offset_left = 817.0
-offset_top = 649.0
-offset_right = 913.0
-offset_bottom = 688.0
+offset_left = 847.0
+offset_top = 628.0
+offset_right = 943.0
+offset_bottom = 667.0
 theme_override_fonts/font = ExtResource("2_wwvr1")
 theme_override_font_sizes/font_size = 32
 text = "x15"
 
 [connection signal="pressed" from="TiendaUI/CenterContainer/HBoxContainer/botones/vidaBoton" to="." method="_on_vida_boton_pressed"]
+[connection signal="pressed" from="TiendaUI/CenterContainer/HBoxContainer/botones/danoBoton" to="." method="_on_dano_boton_pressed"]
 [connection signal="pressed" from="TiendaUI/CenterContainer/HBoxContainer/botones/calaveraBoton" to="." method="_on_calavera_boton_pressed"]
 [connection signal="pressed" from="TiendaUI/CenterContainer/HBoxContainer/botones/tiempoBoton" to="." method="_on_tiempo_boton_pressed"]
 [connection signal="pressed" from="TiendaUI/CenterContainer/HBoxContainer/botones/memoriaBoton" to="." method="_on_memoria_boton_pressed"]

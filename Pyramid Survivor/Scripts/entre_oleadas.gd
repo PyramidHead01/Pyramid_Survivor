@@ -2,12 +2,6 @@ extends Node2D
 
 signal hoverBotonTienda
 
-#Porque hago esto aqui y no en Variables Comunes? Buena pregunta, godot es puta basura
-var huesos_n = 0
-var porcentaje_n = 0
-var enemigos_n = 0
-var vida_n = 0
-
 func _ready():
 	hide()
 
@@ -46,6 +40,6 @@ func _on_tienda_compra(id):
 				VariablesComunes.porcentaje_n+=1
 			3:
 				VariablesComunes.enemigos_n-=1
+			4:
+				VariablesComunes.dano_n+=1
 
-func aaaaa():
-	return	[enemigos_n]

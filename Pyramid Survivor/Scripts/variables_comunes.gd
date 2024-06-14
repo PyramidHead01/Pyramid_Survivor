@@ -11,6 +11,12 @@ var rutaJuego = '/root/menuInicio/Juego'
 #Player
 var posicion_player = Vector2(0,0)
 
+#Dano
+var dano_total = 20
+var dano_base = 10
+var dano_up = 5
+var dano_n = 0
+
 #Velocidades
 var vel_player = 400
 var vel_player_almacenada = vel_player
@@ -92,7 +98,9 @@ func nuevoEnemigo(enemigo_base):
 	
 	#Instanciamos un enemigo, se hace hijo, y se pone en una pos random
 	var enemigo = enemigo_base.instantiate()
-	get_node(rutaJuego+'/Enemigos').add_child(enemigo)
+	#print(enemigo.name)
+	#enemigo.name = "Enemigo"
+	get_node(rutaJuego+'/Enemigos').add_child(enemigo,true)
 	enemigo.position = Vector2(pos_x,pos_y)
 	
 	#Aumentamos limite
