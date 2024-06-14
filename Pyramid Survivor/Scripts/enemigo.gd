@@ -5,6 +5,8 @@ var moverse = true
 var dist = Vector2.ZERO
 var mov_x = false
 
+var vida = 100
+
 #Emite la se;al que hara da;o al player
 func _on_area_2d_body_entered(body):
 	if(body.get("name")=="Player"):

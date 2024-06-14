@@ -13,7 +13,6 @@ var posicion_player = Vector2(0,0)
 
 #Dano
 var dano_total = 20
-var dano_base = 10
 var dano_up = 5
 var dano_n = 0
 
@@ -49,7 +48,7 @@ var enemigos_n = 0
 #Porcentaje
 var porcentaje_actual = 0
 var porcentaje_aumento = 1
-var porcentaje_x_seg = 20
+var porcentaje_x_seg = 5
 var porcentaje_n = 0
 
 #Oleadas
@@ -108,6 +107,32 @@ func nuevoEnemigo(enemigo_base):
 	
 	#Escribimos el nuevo valor
 	get_node(rutaJuego+'/InterfazSuperior/Memoria').text = str(VariablesComunes.enemigos_cant)+"/255"
+func danarEnemigo(nodoEnemigo):
+	#nodoEnemigo.vida
+	
+	nodoEnemigo.vida-=(dano_total+(dano_up*dano_n))
+	
+	var dist=nodoEnemigo.position.direction_to(posicion_player)
+	
+	var retraso = 200
+	
+	if dist.x >= dist.y:
+		dist = dist.y
+		if dist > 0:
+			nodoEnemigo.position = Vector2(nodoEnemigo.position.x-retraso,nodoEnemigo.position.y)
+		else:
+			nodoEnemigo.position = Vector2(nodoEnemigo.position.x,nodoEnemigo.position.y+retraso)
+	else:
+		dist = dist.x
+		if dist > 0:
+			nodoEnemigo.position = Vector2(nodoEnemigo.position.x,nodoEnemigo.position.y-retraso)
+		else:
+			nodoEnemigo.position = Vector2(nodoEnemigo.position.x+retraso,nodoEnemigo.position.y)
+		
+	if nodoEnemigo.vida <= 0:
+		nodoEnemigo.queue_free()
+		matarEnemigo(true)
+	pass
 func matarEnemigo(muerte_espada):
 	enemigos_cant-=enemigo_ind
 	if muerte_espada:
