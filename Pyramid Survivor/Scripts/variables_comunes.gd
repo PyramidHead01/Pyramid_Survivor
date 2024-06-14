@@ -118,7 +118,6 @@ func limpiarDatosInterfaz():
 	var i = 0
 	for child in get_node(ruta_vida_spr).get_children():
 		if vida_player_max > i:
-			print(child.name)
 			child.show()
 		i+= 1
 func _on_porcentaje_oleada_timeout():
@@ -137,6 +136,14 @@ func finOleada(ganado, mensaje):
 		entreOleadas.emit()
 		nOleadas += 1
 
+
+	get_node(rutaJuego+'/EntreOleadas/botonSiguienteOleada/CollisionShape2D').set_deferred("disabled", false)
+	get_node(rutaJuego+'/EntreOleadas/botonTienda/CollisionShape2D').set_deferred("disabled", false)
+	
+	
+	#get_node(rutaJuego+'/EntreOleadas/botonSiguienteOleada/CollisionShape2D').disabled = false
+	#get_node(rutaJuego+'/EntreOleadas/botonTienda/CollisionShape2D').disabled = false
+
 	oleada.show()
 func seguirOleada():
 	get_node(rutaJuego+'/InterfazSuperior/Porcentaje').text="0%"
@@ -144,6 +151,9 @@ func seguirOleada():
 	
 	get_node(rutaJuego+'/PorcentajeOleada').start()
 	get_node(rutaJuego+'/Spawner').start()
+	
+	#get_node(rutaJuego+'/EntreOleadas/botonSiguienteOleada/CollisionShape2D').disabled = true
+	#get_node(rutaJuego+'/EntreOleadas/botonTienda/CollisionShape2D').disabled = true
 	limpiarDatosInterfaz()
 
 #Tienda

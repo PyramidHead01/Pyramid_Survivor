@@ -19,6 +19,12 @@ func _on_boton_tienda_body_entered(body):
 func _on_boton_siguiente_oleada_body_entered(body):
 	if body.get("name")=="Player":
 		VariablesComunes.seguirOleada()
+			
+		$botonSiguienteOleada/CollisionShape2D.set_deferred("disabled", true)
+		$botonTienda/CollisionShape2D.set_deferred("disabled", true)
+		
+		#$botonSiguienteOleada/CollisionShape2D.disabled = true
+		#$botonTienda/CollisionShape2D.disabled = true
 		hide()
 
 func _on_tienda_compra(id):
@@ -32,7 +38,6 @@ func _on_tienda_compra(id):
 				var i = 0
 				for child in get_node(VariablesComunes.ruta_vida_spr).get_children():
 					if VariablesComunes.vida_player_max > i:
-						print(child.name)
 						child.show()
 					i+= 1
 			1:
