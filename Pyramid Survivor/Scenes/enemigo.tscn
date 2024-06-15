@@ -19,10 +19,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8lk68"]
-size = Vector2(10, 15)
+size = Vector2(25, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8p2n"]
-size = Vector2(25, 25)
+size = Vector2(26, 26)
 
 [node name="Enemigo" type="CharacterBody2D"]
 scale = Vector2(4, 4)
@@ -30,7 +30,7 @@ script = ExtResource("1_1fcu7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dsomi")
-frame_progress = 0.7497
+frame_progress = 0.945268
 
 [node name="ZonaQueGolpea" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8lk68")

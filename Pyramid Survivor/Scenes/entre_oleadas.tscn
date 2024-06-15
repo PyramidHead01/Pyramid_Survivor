@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/entre_oleadas.gd" id="1_jwmne"]
 [ext_resource type="Texture2D" uid="uid://cutglkclquwmw" path="res://Sprites/Final/siguienteOleada.png" id="2_x22x5"]
-[ext_resource type="Texture2D" uid="uid://b31dpxhuu6k66" path="res://Sprites/Place_Holders/placeholder_botonTienda.png" id="3_qrc3w"]
+[ext_resource type="Texture2D" uid="uid://dspp2ao1y47b1" path="res://Sprites/Final/vendedor.png" id="3_wmnen"]
 [ext_resource type="PackedScene" uid="uid://brewgxhcwxuiw" path="res://Scenes/tienda.tscn" id="4_fxxvb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hfcr"]
@@ -21,11 +21,11 @@ texture = ExtResource("2_x22x5")
 shape = SubResource("RectangleShape2D_4hfcr")
 
 [node name="botonTienda" type="Area2D" parent="."]
-position = Vector2(744, 356)
+position = Vector2(285, 468)
 scale = Vector2(4, 4)
 
 [node name="Sprite2D" type="Sprite2D" parent="botonTienda"]
-texture = ExtResource("3_qrc3w")
+texture = ExtResource("3_wmnen")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="botonTienda"]
 shape = SubResource("RectangleShape2D_4hfcr")

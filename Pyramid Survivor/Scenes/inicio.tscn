@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bo2frwp4o8t40"]
+[gd_scene load_steps=8 format=3 uid="uid://bo2frwp4o8t40"]
 
 [ext_resource type="Script" path="res://Scripts/inicio.gd" id="1_heod4"]
 [ext_resource type="FontFile" uid="uid://b6d4iwri5lpd5" path="res://FontNES.ttf" id="1_mryd2"]
 [ext_resource type="Texture2D" uid="uid://coenipalidsgb" path="res://Sprites/piexelNegro.png" id="2_5te00"]
+[ext_resource type="Texture2D" uid="uid://dqekcwan3852l" path="res://Sprites/Final/portadaInicio.png" id="2_gf60o"]
 [ext_resource type="AudioStream" uid="uid://cumymwac78wck" path="res://Sonidos/Finales/botonAceptar.wav" id="4_re30b"]
 [ext_resource type="AudioStream" uid="uid://cxplt61i54goe" path="res://Sonidos/Finales/menuInicio.ogg" id="5_nj84x"]
 [ext_resource type="AudioStream" uid="uid://vq7784jds4p0" path="res://Sonidos/placeholders/placeholder_rickRoll.wav" id="6_oedmq"]
@@ -16,20 +17,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_heod4")
 
-[node name="Mensaje" type="Node2D" parent="."]
-
-[node name="MensajeFondo" type="TextureRect" parent="Mensaje"]
+[node name="Fondo" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 1024.0
 offset_bottom = 896.0
-texture = ExtResource("2_5te00")
-
-[node name="Label" type="Label" parent="Mensaje"]
-offset_right = 1024.0
-offset_bottom = 896.0
-theme_override_fonts/font = ExtResource("1_mryd2")
-text = "HOLA HOLA HOLA HOLA"
-horizontal_alignment = 1
-vertical_alignment = 1
+texture = ExtResource("2_gf60o")
 
 [node name="OpcionesInicio" type="CenterContainer" parent="."]
 layout_mode = 0
@@ -70,6 +62,21 @@ autoplay = true
 
 [node name="rickRollSon" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_oedmq")
+
+[node name="Mensaje" type="Node2D" parent="."]
+
+[node name="MensajeFondo" type="TextureRect" parent="Mensaje"]
+offset_right = 1024.0
+offset_bottom = 896.0
+texture = ExtResource("2_5te00")
+
+[node name="Label" type="Label" parent="Mensaje"]
+offset_right = 1024.0
+offset_bottom = 896.0
+theme_override_fonts/font = ExtResource("1_mryd2")
+text = "HOLA HOLA HOLA HOLA"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="OpcionesInicio/VBoxContainer/play_bot" to="." method="_on_play_bot_pressed"]
 [connection signal="pressed" from="OpcionesInicio/VBoxContainer/instr_bot" to="." method="_on_instr_bot_pressed"]

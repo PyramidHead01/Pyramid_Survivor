@@ -56,6 +56,7 @@ animation = &"andarIzquierda"
 shape = SubResource("RectangleShape2D_rrl3g")
 
 [node name="Espada" parent="." instance=ExtResource("3_15l7g")]
+visible = false
 position = Vector2(0, -0.5)
 
 [node name="Audio" type="Node2D" parent="."]
