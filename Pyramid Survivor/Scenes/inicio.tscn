@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bo2frwp4o8t40"]
+[gd_scene load_steps=16 format=3 uid="uid://bo2frwp4o8t40"]
 
 [ext_resource type="Script" path="res://Scripts/inicio.gd" id="1_heod4"]
 [ext_resource type="FontFile" uid="uid://b6d4iwri5lpd5" path="res://FontNES.ttf" id="1_mryd2"]
@@ -7,7 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://cumymwac78wck" path="res://Sonidos/Finales/botonAceptar.wav" id="4_re30b"]
 [ext_resource type="Texture2D" uid="uid://cyynjm7d3kuu2" path="res://Sprites/Final/botonSeleccionado.png" id="4_wgew0"]
 [ext_resource type="AudioStream" uid="uid://cxplt61i54goe" path="res://Sonidos/Finales/menuInicio.ogg" id="5_nj84x"]
-[ext_resource type="AudioStream" uid="uid://vq7784jds4p0" path="res://Sonidos/placeholders/placeholder_rickRoll.wav" id="6_oedmq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g6x5l"]
 
@@ -83,7 +82,7 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_sp0wj")
 text = "CREDITS"
 
 [node name="TimerRickRoll" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 30.0
 one_shot = true
 
 [node name="Timer2" type="Timer" parent="."]
@@ -94,9 +93,6 @@ stream = ExtResource("4_re30b")
 [node name="inicioSon" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_nj84x")
 autoplay = true
-
-[node name="rickRollSon" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_oedmq")
 
 [node name="Mensaje" type="Node2D" parent="."]
 
@@ -115,6 +111,14 @@ WITH THE LITTLE TIME I HAD,
 BUT I HAVE TO ADMIT THAT 
 THE SPRITES AND SOUNDS COULD BE BETTER.
 HAVING ALL THIS SAID, GOOD LUCK TO ALL THE PARTICIPANTS
+
+I RECOMMEND YOU WAIT 30 SECONDS, 
+MAYBE THIS STORY WILL BE EXPLAINED TO YOU, 
+A STORY ABOUT NOT GIVING UP
+
+CONTROLS:
+KEYBOARD ARROWS -> MOVE
+SPACE -> ATTACK AND OTHER OPTIONS
 
 (TO START PLAYING, PRESS SPACE)"
 horizontal_alignment = 1
