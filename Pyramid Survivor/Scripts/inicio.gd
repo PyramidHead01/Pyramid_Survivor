@@ -1,22 +1,36 @@
 extends Control
 
-var mensaje = false
+var mensaje = true
+var rickRoll = false
+
+var inicio = true
+
+var textoCreditos = "CREDITOS"
+var textoInstrucciones = "INSTRUCCIONES"
 
 ###########################
 ########FUNC_BASIC#########
 ###########################
 func _ready():
 	$inicioSon.play()
-	if mensaje:
-		$OpcionesInicio.hide()
-	else:
-		$Mensaje.hide()
-		$OpcionesInicio/VBoxContainer/play_bot.grab_focus()
+	$OpcionesInicio.hide()
 func _process(delta):
-	if Input.is_action_pressed('ui_cancel') && mensaje:
-		$Mensaje.hide()
-		$OpcionesInicio.show()
-		$OpcionesInicio/VBoxContainer/play_bot.grab_focus()
+	
+	if Input.is_action_pressed('ui_accept'):
+		if rickRoll:
+			$inicioSon.play()
+			$rickRollSon.stop() 
+			$OpcionesInicio.show()
+			$OpcionesInicio/VBoxContainer/play_bot.grab_focus()
+			rickRoll = false
+		if mensaje:
+			$Mensaje.hide()
+			$OpcionesInicio.show()
+			$OpcionesInicio/VBoxContainer/play_bot.grab_focus()
+			mensaje = false
+			if inicio:
+				inicio = false
+				$TimerRickRoll.start()
 
 ###########################
 ########BOTONES############
@@ -31,19 +45,24 @@ func _on_play_bot_pressed():
 	$TimerRickRoll.stop()
 func _on_cred_bot_pressed():
 	botSonido()
-	$TimerRickRoll.stop()
-	print("CREDITOS")
+	aparecerMensaje(textoCreditos)
 func _on_instr_bot_pressed():
 	botSonido()
-	$TimerRickRoll.stop()
-	print("INSTRUCCIONES")
+	aparecerMensaje(textoInstrucciones)
 
+func aparecerMensaje(texto):
+	$OpcionesInicio.hide()
+	$TimerRickRoll.stop()
+	$Mensaje/Label.text = texto
+	$Mensaje.show()
+	mensaje = true
 
 func botSonido():
 	$botonSon.play()
 
-
 func _on_timer_timeout():
 	$inicioSon.stop()
 	$rickRollSon.play() 
+	$OpcionesInicio.hide()
+	rickRoll = true
 	print("RICK ROLL")

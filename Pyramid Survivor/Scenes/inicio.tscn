@@ -56,8 +56,7 @@ theme_override_fonts/font = ExtResource("1_mryd2")
 text = "CREDITS"
 
 [node name="TimerRickRoll" type="Timer" parent="."]
-wait_time = 30.0
-autostart = true
+one_shot = true
 
 [node name="Timer2" type="Timer" parent="."]
 
@@ -72,7 +71,6 @@ autoplay = true
 stream = ExtResource("6_oedmq")
 
 [connection signal="pressed" from="OpcionesInicio/VBoxContainer/play_bot" to="." method="_on_play_bot_pressed"]
-[connection signal="toggled" from="OpcionesInicio/VBoxContainer/play_bot" to="." method="_on_play_bot_toggled"]
 [connection signal="pressed" from="OpcionesInicio/VBoxContainer/instr_bot" to="." method="_on_instr_bot_pressed"]
 [connection signal="pressed" from="OpcionesInicio/VBoxContainer/cred_bot" to="." method="_on_cred_bot_pressed"]
 [connection signal="timeout" from="TimerRickRoll" to="." method="_on_timer_timeout"]
