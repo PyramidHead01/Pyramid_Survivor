@@ -13,7 +13,6 @@ func _process(delta):
 	pass
 
 func _on_porcentaje_oleada_timeout():
-	#VariablesComunes.interfaz_porcentaje()
 	VariablesComunes.porcentaje_actual+=(VariablesComunes.porcentaje_x_seg+(VariablesComunes.porcentaje_aumento*VariablesComunes.porcentaje_n))
 	$InterfazSuperior/Porcentaje.text=str(VariablesComunes.porcentaje_actual)+"%"
 	if VariablesComunes.porcentaje_actual >= 100:

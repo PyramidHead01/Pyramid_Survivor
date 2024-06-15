@@ -1,12 +1,31 @@
-[gd_scene load_steps=8 format=3 uid="uid://bo2frwp4o8t40"]
+[gd_scene load_steps=17 format=3 uid="uid://bo2frwp4o8t40"]
 
 [ext_resource type="Script" path="res://Scripts/inicio.gd" id="1_heod4"]
 [ext_resource type="FontFile" uid="uid://b6d4iwri5lpd5" path="res://FontNES.ttf" id="1_mryd2"]
 [ext_resource type="Texture2D" uid="uid://coenipalidsgb" path="res://Sprites/piexelNegro.png" id="2_5te00"]
 [ext_resource type="Texture2D" uid="uid://dqekcwan3852l" path="res://Sprites/Final/portadaInicio.png" id="2_gf60o"]
 [ext_resource type="AudioStream" uid="uid://cumymwac78wck" path="res://Sonidos/Finales/botonAceptar.wav" id="4_re30b"]
+[ext_resource type="Texture2D" uid="uid://cyynjm7d3kuu2" path="res://Sprites/Final/botonSeleccionado.png" id="4_wgew0"]
 [ext_resource type="AudioStream" uid="uid://cxplt61i54goe" path="res://Sonidos/Finales/menuInicio.ogg" id="5_nj84x"]
 [ext_resource type="AudioStream" uid="uid://vq7784jds4p0" path="res://Sonidos/placeholders/placeholder_rickRoll.wav" id="6_oedmq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g6x5l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3alj4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jfi2b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5hnga"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nxvhw"]
+texture = ExtResource("4_wgew0")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_oxhkg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_71h84"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sp0wj"]
+texture = ExtResource("4_wgew0")
 
 [node name="menuInicio" type="Control"]
 layout_mode = 3
@@ -35,20 +54,36 @@ layout_mode = 2
 [node name="play_bot" type="Button" parent="OpcionesInicio/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_mryd2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g6x5l")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3alj4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jfi2b")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5hnga")
+theme_override_styles/focus = SubResource("StyleBoxTexture_nxvhw")
 text = "PLAY"
+icon = SubResource("ViewportTexture_oxhkg")
 
 [node name="instr_bot" type="Button" parent="OpcionesInicio/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_mryd2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_71h84")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3alj4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jfi2b")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5hnga")
+theme_override_styles/focus = SubResource("StyleBoxTexture_sp0wj")
 text = "Instructions"
 
 [node name="cred_bot" type="Button" parent="OpcionesInicio/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_mryd2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_71h84")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3alj4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jfi2b")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5hnga")
+theme_override_styles/focus = SubResource("StyleBoxTexture_sp0wj")
 text = "CREDITS"
 
 [node name="TimerRickRoll" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 5.0
 one_shot = true
 
 [node name="Timer2" type="Timer" parent="."]
@@ -74,9 +109,17 @@ texture = ExtResource("2_5te00")
 offset_right = 1024.0
 offset_bottom = 896.0
 theme_override_fonts/font = ExtResource("1_mryd2")
-text = "HOLA HOLA HOLA HOLA"
+text = "HELLO, THIS IS MY FIRST PROJECT USING GODOT, 
+I HAVE TRIED TO DO IT AS BEST AS POSSIBLE 
+WITH THE LITTLE TIME I HAD, 
+BUT I HAVE TO ADMIT THAT 
+THE SPRITES AND SOUNDS COULD BE BETTER.
+HAVING ALL THIS SAID, GOOD LUCK TO ALL THE PARTICIPANTS
+
+(TO START PLAYING, PRESS SPACE)"
 horizontal_alignment = 1
 vertical_alignment = 1
+justification_flags = 162
 
 [connection signal="pressed" from="OpcionesInicio/VBoxContainer/play_bot" to="." method="_on_play_bot_pressed"]
 [connection signal="pressed" from="OpcionesInicio/VBoxContainer/instr_bot" to="." method="_on_instr_bot_pressed"]

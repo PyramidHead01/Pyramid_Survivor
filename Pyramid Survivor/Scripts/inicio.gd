@@ -1,11 +1,30 @@
 extends Control
 
 var mensaje = true
-var rickRoll = false
 
 var inicio = true
 
-var textoCreditos = "CREDITOS"
+var textoCreditos = "GAME CREATED BY HUGO (PYRAMID HEAD) 
+
+NES JAM 2024 (https://itch.io/jam/nes-jam2024)
+
+SOFTWARE USED:
+GODOT 4
+ASEPRITE
+AUDACITY
+FAMITRACKER
+JSFXR
+
+ADDITIONAL THANKS:
+TheWolfBunny64 (NES TEXT FONT)
+P. BLEY (EMOTIONAL SUPPORT)
+Doctor_Succubus (JAM AUTHOR)
+
+ADDITIONAL LINKS:
+GITHUB  (https://github.com/PyramidHead01/Pyramid_Survivor)
+(ALL THE COMMITS ARE IN SPANISH)
+ITCH.IO  (https://pyramidhead83.itch.io/)
+(PRESS SPACE TO EXIT)"
 var textoInstrucciones = "INSTRUCCIONES"
 
 ###########################
@@ -16,21 +35,14 @@ func _ready():
 	$OpcionesInicio.hide()
 func _process(delta):
 	
-	if Input.is_action_pressed('ui_accept'):
-		if rickRoll:
-			$inicioSon.play()
-			$rickRollSon.stop() 
-			$OpcionesInicio.show()
-			$OpcionesInicio/VBoxContainer/play_bot.grab_focus()
-			rickRoll = false
-		if mensaje:
-			$Mensaje.hide()
-			$OpcionesInicio.show()
-			$OpcionesInicio/VBoxContainer/play_bot.grab_focus()
-			mensaje = false
-			if inicio:
-				inicio = false
-				$TimerRickRoll.start()
+	if Input.is_action_pressed('ui_accept') && mensaje:
+		$Mensaje.hide()
+		$OpcionesInicio.show()
+		$OpcionesInicio/VBoxContainer/play_bot.grab_focus()
+		mensaje = false
+		if inicio:
+			inicio = false
+			$TimerRickRoll.start()
 
 ###########################
 ########BOTONES############
@@ -61,8 +73,4 @@ func botSonido():
 	$botonSon.play()
 
 func _on_timer_timeout():
-	$inicioSon.stop()
-	$rickRollSon.play() 
-	$OpcionesInicio.hide()
-	rickRoll = true
-	print("RICK ROLL")
+	$Fondo.texture = load("res://Sprites/Final/portadaInicioQR.png")

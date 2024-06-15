@@ -1,9 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://brewgxhcwxuiw"]
+[gd_scene load_steps=11 format=3 uid="uid://brewgxhcwxuiw"]
 
 [ext_resource type="Script" path="res://Scripts/tienda.gd" id="1_m8wlm"]
 [ext_resource type="Texture2D" uid="uid://coenipalidsgb" path="res://Sprites/piexelNegro.png" id="1_xvngi"]
 [ext_resource type="FontFile" uid="uid://b6d4iwri5lpd5" path="res://FontNES.ttf" id="2_wwvr1"]
 [ext_resource type="Texture2D" uid="uid://blu4qfunit3fs" path="res://Sprites/Final/vendedorIcono.png" id="3_kdnu2"]
+[ext_resource type="Texture2D" uid="uid://cyynjm7d3kuu2" path="res://Sprites/Final/botonSeleccionado.png" id="5_e2bqv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_elymo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_phlp1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vce3t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xdlbo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ck6b5"]
+texture = ExtResource("5_e2bqv")
 
 [node name="Tienda" type="Node2D"]
 script = ExtResource("1_m8wlm")
@@ -64,6 +76,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_wwvr1")
 theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_elymo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_phlp1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vce3t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xdlbo")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ck6b5")
 text = "HP UP"
 
 [node name="danoBoton" type="Button" parent="TiendaUI/CenterContainer/HBoxContainer/botones"]
@@ -72,30 +89,55 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_wwvr1")
 theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_elymo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_phlp1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vce3t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xdlbo")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ck6b5")
 text = "DMG UP"
 
 [node name="calaveraBoton" type="Button" parent="TiendaUI/CenterContainer/HBoxContainer/botones"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_wwvr1")
 theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_elymo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_phlp1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vce3t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xdlbo")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ck6b5")
 text = "SKULLS UP"
 
 [node name="tiempoBoton" type="Button" parent="TiendaUI/CenterContainer/HBoxContainer/botones"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_wwvr1")
 theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_elymo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_phlp1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vce3t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xdlbo")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ck6b5")
 text = "% UP"
 
 [node name="memoriaBoton" type="Button" parent="TiendaUI/CenterContainer/HBoxContainer/botones"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_wwvr1")
 theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_elymo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_phlp1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vce3t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xdlbo")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ck6b5")
 text = "X/255 UP"
 
 [node name="salirBoton" type="Button" parent="TiendaUI/CenterContainer/HBoxContainer/botones"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_wwvr1")
 theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_elymo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_phlp1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vce3t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xdlbo")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ck6b5")
 text = "EXIT"
 
 [node name="Precios" type="Node2D" parent="TiendaUI"]
