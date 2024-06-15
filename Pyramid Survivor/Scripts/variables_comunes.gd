@@ -71,7 +71,6 @@ func _process(delta):
 #Player
 func danoPlayer():
 	if vida_player>0:
-		
 		#Restamos un corazon de vida
 		var vida_icono = get_node(ruta_vida_spr+"/vida_"+str(vida_player-1))
 		vida_icono.hide()
@@ -95,7 +94,6 @@ func nuevoEnemigo(enemigo_base):
 		pos_x = 0
 	else:
 		pos_x = 984
-	#var pos_x = rng.randi_range(0, 984)
 	var pos_y = rng.randi_range(0, 960)
 	
 	#Instanciamos un enemigo, se hace hijo, y se pone en una pos random
@@ -180,10 +178,6 @@ func finOleada(ganado, mensaje):
 
 	get_node(rutaJuego+'/EntreOleadas/botonSiguienteOleada/CollisionShape2D').set_deferred("disabled", false)
 	get_node(rutaJuego+'/EntreOleadas/botonTienda/CollisionShape2D').set_deferred("disabled", false)
-	
-	
-	#get_node(rutaJuego+'/EntreOleadas/botonSiguienteOleada/CollisionShape2D').disabled = false
-	#get_node(rutaJuego+'/EntreOleadas/botonTienda/CollisionShape2D').disabled = false
 
 	oleada.show()
 func seguirOleada():

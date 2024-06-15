@@ -28,6 +28,7 @@ func _physics_process(delta):
 		if VariablesComunes.muertePlayer:
 			queue_free()
 		if Input.is_action_just_pressed ('ui_accept'):
+			$Espada/CollisionShape2D.set_deferred("disabled", false)
 			$Espada.show()
 			$Espada/TiempoEspada.start()
 			$Audio/EspadaSon.play()

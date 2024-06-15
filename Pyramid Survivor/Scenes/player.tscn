@@ -26,5 +26,3 @@ position = Vector2(0, 15)
 
 [node name="EspadaSon" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("4_pw2eh")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio"]
