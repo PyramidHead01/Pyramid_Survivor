@@ -10,6 +10,7 @@ var rutaJuego = '/root/menuInicio/Juego'
 
 #Player
 var posicion_player = Vector2(0,0)
+var parar = false
 
 #Dano
 var dano_total = 20
@@ -41,14 +42,14 @@ var huesos_n = 0
 #Total enemigos
 var max_enemigos = 255
 var enemigos_cant = 0
-var enemigo_ind = 5
+var enemigo_ind = 1
 var enemigos_aumento = 10
 var enemigos_n = 0
 
 #Porcentaje
 var porcentaje_actual = 0
 var porcentaje_aumento = 1
-var porcentaje_x_seg = 5
+var porcentaje_x_seg = 2
 var porcentaje_n = 0
 
 #Oleadas
@@ -75,8 +76,10 @@ func danoPlayer():
 		var vida_icono = get_node(ruta_vida_spr+"/vida_"+str(vida_player-1))
 		vida_icono.hide()
 		vida_player-=1
-		
+		if vida_player>0:
+			get_node(rutaJuego+'/Audios/DanoPlayerSon').play()
 	if vida_player==0:
+		get_node(rutaJuego+'/Audios/muertePlayerSon').play()
 		finOleada(false,"GAME OVER:"+str(nOleadas))
 func matarPlayer(node):
 	node.queue_free()
@@ -97,8 +100,7 @@ func nuevoEnemigo(enemigo_base):
 	
 	#Instanciamos un enemigo, se hace hijo, y se pone en una pos random
 	var enemigo = enemigo_base.instantiate()
-	#print(enemigo.name)
-	#enemigo.name = "Enemigo"
+	get_node(rutaJuego+'/Audios/instanciarEnemigoSon').play()
 	get_node(rutaJuego+'/Enemigos').add_child(enemigo,true)
 	enemigo.position = Vector2(pos_x,pos_y)
 	
@@ -135,6 +137,7 @@ func danarEnemigo(nodoEnemigo):
 	pass
 func matarEnemigo(muerte_espada):
 	enemigos_cant-=enemigo_ind
+	get_node(rutaJuego+'/Audios/muerteEnemigoSon').play()
 	if muerte_espada:
 		interfaz_huesos()
 func matarEnemigosTODOS():
@@ -156,7 +159,12 @@ func limpiarDatosInterfaz():
 func _on_porcentaje_oleada_timeout():
 	pass
 func finOleada(ganado, mensaje):
-
+	print(vida_player)
+	if ganado:
+		get_node(rutaJuego+'/Audios/finOleadaSon').play()
+	else:
+		get_node(rutaJuego+'/Audios/muertePlayerSon').play()
+	get_node(rutaJuego+'/Audios/audioFondoSon').stop()
 	get_node(rutaJuego+'/PorcentajeOleada').stop()
 	matarEnemigosTODOS()
 	
@@ -179,6 +187,8 @@ func finOleada(ganado, mensaje):
 
 	oleada.show()
 func seguirOleada():
+	get_node(rutaJuego+'/Audios/finOleadaSon').play()
+	get_node(rutaJuego+'/Audios/audioFondoSon').play()
 	get_node(rutaJuego+'/InterfazSuperior/Porcentaje').text="0%"
 	get_node(rutaJuego+'/InterfazSuperior/Memoria').text = "0/255"
 	

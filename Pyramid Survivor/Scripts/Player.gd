@@ -22,13 +22,15 @@ func ui_movimiento():
 
 #Mezcladillo de cosas, movimiento y atacar por ahora
 func _physics_process(delta):
-	ui_movimiento()
-	move_and_slide()
-	if VariablesComunes.muertePlayer:
-		queue_free()
-	if Input.is_action_just_pressed ('ui_accept'):
-		$Espada.show()
-		$Espada/TiempoEspada.start()
+	if !VariablesComunes.parar:
+		ui_movimiento()
+		move_and_slide()
+		if VariablesComunes.muertePlayer:
+			queue_free()
+		if Input.is_action_just_pressed ('ui_accept'):
+			$Espada.show()
+			$Espada/TiempoEspada.start()
+			$Audio/EspadaSon.play()
 
 func _on_juego_muerte_player():
 	print("FASDASD")

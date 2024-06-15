@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bo2frwp4o8t40"]
+[gd_scene load_steps=7 format=3 uid="uid://bo2frwp4o8t40"]
 
 [ext_resource type="Script" path="res://Scripts/inicio.gd" id="1_heod4"]
 [ext_resource type="FontFile" uid="uid://b6d4iwri5lpd5" path="res://FontNES.ttf" id="1_mryd2"]
 [ext_resource type="Texture2D" uid="uid://coenipalidsgb" path="res://Sprites/piexelNegro.png" id="2_5te00"]
+[ext_resource type="AudioStream" uid="uid://d4mf2uemkeic3" path="res://Sonidos/placeholders/placeholder_botonAceptar.wav" id="4_agvhx"]
+[ext_resource type="AudioStream" uid="uid://cpmi0wmkjf7lu" path="res://Sonidos/placeholders/placeholder_menuIntro.ogg" id="5_oqo13"]
+[ext_resource type="AudioStream" uid="uid://vq7784jds4p0" path="res://Sonidos/placeholders/placeholder_rickRoll.wav" id="6_oedmq"]
 
 [node name="menuInicio" type="Control"]
 layout_mode = 3
@@ -57,6 +60,16 @@ wait_time = 30.0
 autostart = true
 
 [node name="Timer2" type="Timer" parent="."]
+
+[node name="botonSon" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_agvhx")
+
+[node name="inicioSon" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_oqo13")
+autoplay = true
+
+[node name="rickRollSon" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_oedmq")
 
 [connection signal="pressed" from="OpcionesInicio/VBoxContainer/play_bot" to="." method="_on_play_bot_pressed"]
 [connection signal="toggled" from="OpcionesInicio/VBoxContainer/play_bot" to="." method="_on_play_bot_toggled"]

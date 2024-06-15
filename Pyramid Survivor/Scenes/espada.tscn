@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bh6srikxvjfew"]
+[gd_scene load_steps=5 format=3 uid="uid://bh6srikxvjfew"]
 
 [ext_resource type="Texture2D" uid="uid://cmy4upo5juut6" path="res://Sprites/Place_Holders/placeholder_espada.png" id="1_86l3i"]
 [ext_resource type="Script" path="res://Scripts/espada.gd" id="1_ou581"]
+[ext_resource type="AudioStream" uid="uid://w18pea14nvjw" path="res://Sonidos/placeholders/placeholder_danoEnemigo.wav" id="3_mdbiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vygt3"]
 size = Vector2(30, 20)
@@ -20,6 +21,9 @@ shape = SubResource("RectangleShape2D_vygt3")
 [node name="TiempoEspada" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
+
+[node name="SonidoDanoEnemigo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mdbiw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="TiempoEspada" to="." method="_on_tiempo_espada_timeout"]
