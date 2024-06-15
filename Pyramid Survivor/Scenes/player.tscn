@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_gftd7"]
 [ext_resource type="Texture2D" uid="uid://dgwnww5vlctb0" path="res://Sprites/Place_Holders/placeholder_player.png" id="2_tw13e"]
 [ext_resource type="PackedScene" uid="uid://bh6srikxvjfew" path="res://Scenes/espada.tscn" id="3_15l7g"]
-[ext_resource type="AudioStream" uid="uid://buph634j5lygn" path="res://Sonidos/placeholders/placeholder_espada.wav" id="4_pw2eh"]
+[ext_resource type="AudioStream" uid="uid://d3gno382ii5bk" path="res://Sonidos/Finales/espada.wav" id="4_5qnug"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrl3g"]
 
@@ -25,4 +25,4 @@ position = Vector2(0, 15)
 [node name="Audio" type="Node2D" parent="."]
 
 [node name="EspadaSon" type="AudioStreamPlayer2D" parent="Audio"]
-stream = ExtResource("4_pw2eh")
+stream = ExtResource("4_5qnug")

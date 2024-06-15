@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cmy4upo5juut6" path="res://Sprites/Place_Holders/placeholder_espada.png" id="1_86l3i"]
 [ext_resource type="Script" path="res://Scripts/espada.gd" id="1_ou581"]
-[ext_resource type="AudioStream" uid="uid://w18pea14nvjw" path="res://Sonidos/placeholders/placeholder_danoEnemigo.wav" id="3_mdbiw"]
+[ext_resource type="AudioStream" uid="uid://dihv4ygde6ava" path="res://Sonidos/Finales/danoEnemigo.wav" id="3_nvekl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vygt3"]
 size = Vector2(30, 20)
@@ -23,7 +23,7 @@ wait_time = 0.2
 one_shot = true
 
 [node name="SonidoDanoEnemigo" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_mdbiw")
+stream = ExtResource("3_nvekl")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="TiempoEspada" to="." method="_on_tiempo_espada_timeout"]

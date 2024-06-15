@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/inicio.gd" id="1_heod4"]
 [ext_resource type="FontFile" uid="uid://b6d4iwri5lpd5" path="res://FontNES.ttf" id="1_mryd2"]
 [ext_resource type="Texture2D" uid="uid://coenipalidsgb" path="res://Sprites/piexelNegro.png" id="2_5te00"]
-[ext_resource type="AudioStream" uid="uid://d4mf2uemkeic3" path="res://Sonidos/placeholders/placeholder_botonAceptar.wav" id="4_agvhx"]
+[ext_resource type="AudioStream" uid="uid://cumymwac78wck" path="res://Sonidos/Finales/botonAceptar.wav" id="4_re30b"]
 [ext_resource type="AudioStream" uid="uid://cpmi0wmkjf7lu" path="res://Sonidos/placeholders/placeholder_menuIntro.ogg" id="5_oqo13"]
 [ext_resource type="AudioStream" uid="uid://vq7784jds4p0" path="res://Sonidos/placeholders/placeholder_rickRoll.wav" id="6_oedmq"]
 
@@ -61,7 +61,7 @@ one_shot = true
 [node name="Timer2" type="Timer" parent="."]
 
 [node name="botonSon" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_agvhx")
+stream = ExtResource("4_re30b")
 
 [node name="inicioSon" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_oqo13")

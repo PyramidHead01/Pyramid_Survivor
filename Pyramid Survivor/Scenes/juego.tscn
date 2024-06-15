@@ -5,13 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://b0loh22ayo73" path="res://Scenes/interfaz_superior.tscn" id="4_7v2fb"]
 [ext_resource type="Script" path="res://Scripts/spawn_enemigo.gd" id="4_tf83g"]
 [ext_resource type="PackedScene" uid="uid://djlxg4jk0xhtp" path="res://Scenes/entre_oleadas.tscn" id="5_nn2r3"]
-[ext_resource type="AudioStream" uid="uid://cljodlj41yndc" path="res://Sonidos/placeholders/placeholder_danoPlayer.wav" id="6_fsx8v"]
-[ext_resource type="AudioStream" uid="uid://bpxa0wawnwh5c" path="res://Sonidos/placeholders/placeholder_muertePlayer.wav" id="7_c6opp"]
-[ext_resource type="AudioStream" uid="uid://d4mf2uemkeic3" path="res://Sonidos/placeholders/placeholder_botonAceptar.wav" id="8_1jy5e"]
+[ext_resource type="AudioStream" uid="uid://cfhkhvon4em1" path="res://Sonidos/Finales/danoPlayer.wav" id="6_ctfl3"]
+[ext_resource type="AudioStream" uid="uid://cumymwac78wck" path="res://Sonidos/Finales/botonAceptar.wav" id="7_ylcg1"]
 [ext_resource type="AudioStream" uid="uid://cibqwedf7qgl7" path="res://Sonidos/placeholders/placeholder_menuJuego.ogg" id="9_dr22p"]
-[ext_resource type="AudioStream" uid="uid://dsohravlbtbpn" path="res://Sonidos/placeholders/placeholder_finOleada.wav" id="10_eni3b"]
-[ext_resource type="AudioStream" uid="uid://dber5wxddqif8" path="res://Sonidos/placeholders/placeholder_muerteEnemigo.wav" id="11_oj40x"]
-[ext_resource type="AudioStream" uid="uid://bxyvtyas27qr4" path="res://Sonidos/placeholders/placeholder_instanciarEnemigo.wav" id="12_agwo5"]
+[ext_resource type="AudioStream" uid="uid://262lkabggthq" path="res://Sonidos/Finales/finOleada.wav" id="9_yppm8"]
+[ext_resource type="AudioStream" uid="uid://d30uktho0umrn" path="res://Sonidos/Finales/muertePlayer.wav" id="10_q4aug"]
+[ext_resource type="AudioStream" uid="uid://cir15ropmo1x1" path="res://Sonidos/Finales/muerteEnemigo.wav" id="11_3mhj6"]
+[ext_resource type="AudioStream" uid="uid://bgbfohmuorv47" path="res://Sonidos/Finales/instanciarEnemigo.wav" id="12_gwm5r"]
 
 [node name="Juego" type="Node2D"]
 script = ExtResource("1_ap6u7")
@@ -36,25 +36,25 @@ autostart = true
 [node name="Audios" type="Node2D" parent="."]
 
 [node name="DanoPlayerSon" type="AudioStreamPlayer2D" parent="Audios"]
-stream = ExtResource("6_fsx8v")
+stream = ExtResource("6_ctfl3")
 
 [node name="botonSon" type="AudioStreamPlayer2D" parent="Audios"]
-stream = ExtResource("8_1jy5e")
+stream = ExtResource("7_ylcg1")
 
 [node name="audioFondoSon" type="AudioStreamPlayer2D" parent="Audios"]
 stream = ExtResource("9_dr22p")
 
 [node name="finOleadaSon" type="AudioStreamPlayer2D" parent="Audios"]
-stream = ExtResource("10_eni3b")
+stream = ExtResource("9_yppm8")
 
 [node name="muertePlayerSon" type="AudioStreamPlayer2D" parent="Audios"]
-stream = ExtResource("7_c6opp")
+stream = ExtResource("10_q4aug")
 
 [node name="muerteEnemigoSon" type="AudioStreamPlayer2D" parent="Audios"]
-stream = ExtResource("11_oj40x")
+stream = ExtResource("11_3mhj6")
 
 [node name="instanciarEnemigoSon" type="AudioStreamPlayer2D" parent="Audios"]
-stream = ExtResource("12_agwo5")
+stream = ExtResource("12_gwm5r")
 
 [connection signal="timeout" from="Spawner" to="Spawner" method="_on_timeout"]
 [connection signal="timeout" from="PorcentajeOleada" to="." method="_on_porcentaje_oleada_timeout"]
