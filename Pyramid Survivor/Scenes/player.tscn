@@ -1,9 +1,45 @@
-[gd_scene load_steps=6 format=3 uid="uid://bybax5kfs32qj"]
+[gd_scene load_steps=10 format=3 uid="uid://bybax5kfs32qj"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_gftd7"]
-[ext_resource type="Texture2D" uid="uid://dgwnww5vlctb0" path="res://Sprites/Place_Holders/placeholder_player.png" id="2_tw13e"]
+[ext_resource type="Texture2D" uid="uid://twre3v2mc02s" path="res://Sprites/Final/player_0.png" id="2_vfvu4"]
 [ext_resource type="PackedScene" uid="uid://bh6srikxvjfew" path="res://Scenes/espada.tscn" id="3_15l7g"]
+[ext_resource type="Texture2D" uid="uid://cdhhri6a3i7jp" path="res://Sprites/Final/player_1.png" id="3_vwxu8"]
 [ext_resource type="AudioStream" uid="uid://d3gno382ii5bk" path="res://Sonidos/Finales/espada.wav" id="4_5qnug"]
+[ext_resource type="Texture2D" uid="uid://be55gkrtfast1" path="res://Sprites/Final/player_izq_0.png" id="4_y8akq"]
+[ext_resource type="Texture2D" uid="uid://c0kqgqp02k0sn" path="res://Sprites/Final/player_izq_1.png" id="5_85i5l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ek6vv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vfvu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vwxu8")
+}],
+"loop": true,
+"name": &"andar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_y8akq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_85i5l")
+}],
+"loop": true,
+"name": &"andarIzquierda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vfvu4")
+}],
+"loop": true,
+"name": &"quieto",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrl3g"]
 
@@ -12,15 +48,15 @@ position = Vector2(133, 81)
 scale = Vector2(4, 4)
 script = ExtResource("1_gftd7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_tw13e")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ek6vv")
+animation = &"andarIzquierda"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rrl3g")
 
 [node name="Espada" parent="." instance=ExtResource("3_15l7g")]
-visible = false
-position = Vector2(0, 15)
+position = Vector2(0, -0.5)
 
 [node name="Audio" type="Node2D" parent="."]
 

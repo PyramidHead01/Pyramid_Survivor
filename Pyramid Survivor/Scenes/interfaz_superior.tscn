@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://coenipalidsgb" path="res://Sprites/piexelNegro.png" id="1_1i2jk"]
 [ext_resource type="Script" path="res://Scripts/interfaz_superior.gd" id="1_eduuo"]
-[ext_resource type="Texture2D" uid="uid://cxu6n1lprtvnu" path="res://Sprites/Place_Holders/placeholder_calavera.png" id="2_x2bwi"]
 [ext_resource type="FontFile" uid="uid://b6d4iwri5lpd5" path="res://FontNES.ttf" id="3_aba3s"]
-[ext_resource type="Texture2D" uid="uid://dw01088ij367y" path="res://Sprites/Place_Holders/placeholder_vida.png" id="3_rg76w"]
+[ext_resource type="Texture2D" uid="uid://owx46oi58c56" path="res://Sprites/Final/calaveraIcono.png" id="4_eqorh"]
+[ext_resource type="Texture2D" uid="uid://cdvvo2bl1s1sc" path="res://Sprites/Final/corazonIcono.png" id="5_p4mh4"]
 
 [node name="InterfazSuperior" type="Control"]
 layout_mode = 3
@@ -18,16 +18,16 @@ script = ExtResource("1_eduuo")
 [node name="Fondo" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1024.0
-offset_bottom = 160.0
+offset_bottom = 199.0
 texture = ExtResource("1_1i2jk")
 
 [node name="Calavera" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="Calavera"]
-offset_left = 162.0
-offset_top = 54.0
-offset_right = 222.0
-offset_bottom = 91.0
+offset_left = 148.0
+offset_top = 78.0
+offset_right = 212.0
+offset_bottom = 117.0
 theme_override_fonts/font = ExtResource("3_aba3s")
 theme_override_font_sizes/font_size = 32
 text = "X5"
@@ -35,19 +35,19 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Calavera"]
-offset_left = 42.0
-offset_top = 36.0
-offset_right = 62.0
-offset_bottom = 56.0
+offset_left = 28.0
+offset_top = 60.0
+offset_right = 48.0
+offset_bottom = 80.0
 scale = Vector2(4, 4)
-texture = ExtResource("2_x2bwi")
+texture = ExtResource("4_eqorh")
 
 [node name="Porcentaje" type="Label" parent="."]
 layout_mode = 0
-offset_left = 383.0
-offset_top = 54.0
-offset_right = 423.0
-offset_bottom = 94.0
+offset_left = 369.0
+offset_top = 78.0
+offset_right = 433.0
+offset_bottom = 118.0
 theme_override_fonts/font = ExtResource("3_aba3s")
 theme_override_font_sizes/font_size = 32
 text = "0%"
@@ -56,10 +56,10 @@ vertical_alignment = 1
 
 [node name="Memoria" type="Label" parent="."]
 layout_mode = 0
-offset_left = 580.0
-offset_top = 54.0
-offset_right = 660.0
-offset_bottom = 94.0
+offset_left = 566.0
+offset_top = 78.0
+offset_right = 726.0
+offset_bottom = 118.0
 theme_override_fonts/font = ExtResource("3_aba3s")
 theme_override_font_sizes/font_size = 32
 text = "0/255
@@ -70,10 +70,10 @@ vertical_alignment = 1
 [node name="Vida" type="Node" parent="."]
 
 [node name="Vida_Label" type="Label" parent="Vida"]
-offset_left = 957.0
-offset_top = 3.0
-offset_right = 1021.0
-offset_bottom = 43.0
+offset_left = 943.0
+offset_top = 27.0
+offset_right = 1007.0
+offset_bottom = 67.0
 theme_override_fonts/font = ExtResource("3_aba3s")
 theme_override_font_sizes/font_size = 32
 text = "HP"
@@ -83,69 +83,69 @@ vertical_alignment = 1
 [node name="Vida_Sprite" type="Node" parent="Vida"]
 
 [node name="vida_0" type="TextureRect" parent="Vida/Vida_Sprite"]
-offset_left = 840.0
-offset_top = 106.0
-offset_right = 850.0
-offset_bottom = 117.0
+offset_left = 826.0
+offset_top = 130.0
+offset_right = 837.0
+offset_bottom = 141.0
 scale = Vector2(4, 4)
-texture = ExtResource("3_rg76w")
+texture = ExtResource("5_p4mh4")
 
 [node name="vida_1" type="TextureRect" parent="Vida/Vida_Sprite"]
-offset_left = 885.0
-offset_top = 105.0
-offset_right = 895.0
-offset_bottom = 116.0
+offset_left = 871.0
+offset_top = 129.0
+offset_right = 882.0
+offset_bottom = 140.0
 scale = Vector2(4, 4)
-texture = ExtResource("3_rg76w")
+texture = ExtResource("5_p4mh4")
 
 [node name="vida_2" type="TextureRect" parent="Vida/Vida_Sprite"]
-offset_left = 930.0
-offset_top = 105.0
-offset_right = 940.0
-offset_bottom = 116.0
+offset_left = 916.0
+offset_top = 129.0
+offset_right = 927.0
+offset_bottom = 140.0
 scale = Vector2(4, 4)
-texture = ExtResource("3_rg76w")
+texture = ExtResource("5_p4mh4")
 
 [node name="vida_3" type="TextureRect" parent="Vida/Vida_Sprite"]
-offset_left = 975.0
-offset_top = 105.0
-offset_right = 985.0
-offset_bottom = 116.0
+offset_left = 961.0
+offset_top = 129.0
+offset_right = 972.0
+offset_bottom = 140.0
 scale = Vector2(4, 4)
-texture = ExtResource("3_rg76w")
+texture = ExtResource("5_p4mh4")
 
 [node name="vida_4" type="TextureRect" parent="Vida/Vida_Sprite"]
 visible = false
 offset_left = 840.0
 offset_top = 55.0
 offset_right = 850.0
-offset_bottom = 66.0
+offset_bottom = 65.0
 scale = Vector2(4, 4)
-texture = ExtResource("3_rg76w")
+texture = ExtResource("5_p4mh4")
 
 [node name="vida_5" type="TextureRect" parent="Vida/Vida_Sprite"]
 visible = false
 offset_left = 885.0
 offset_top = 54.0
 offset_right = 895.0
-offset_bottom = 65.0
+offset_bottom = 64.0
 scale = Vector2(4, 4)
-texture = ExtResource("3_rg76w")
+texture = ExtResource("5_p4mh4")
 
 [node name="vida_6" type="TextureRect" parent="Vida/Vida_Sprite"]
 visible = false
 offset_left = 930.0
 offset_top = 54.0
 offset_right = 940.0
-offset_bottom = 65.0
+offset_bottom = 64.0
 scale = Vector2(4, 4)
-texture = ExtResource("3_rg76w")
+texture = ExtResource("5_p4mh4")
 
 [node name="vida_7" type="TextureRect" parent="Vida/Vida_Sprite"]
 visible = false
 offset_left = 975.0
 offset_top = 54.0
 offset_right = 985.0
-offset_bottom = 65.0
+offset_bottom = 64.0
 scale = Vector2(4, 4)
-texture = ExtResource("3_rg76w")
+texture = ExtResource("5_p4mh4")

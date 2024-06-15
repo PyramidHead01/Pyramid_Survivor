@@ -49,7 +49,7 @@ var enemigos_n = 0
 #Porcentaje
 var porcentaje_actual = 0
 var porcentaje_aumento = 1
-var porcentaje_x_seg = 2
+var porcentaje_x_seg = 5
 var porcentaje_n = 0
 
 #Oleadas
@@ -181,7 +181,7 @@ func finOleada(ganado, mensaje):
 
 	oleada.show()
 func seguirOleada():
-	get_node(rutaJuego+'/Audios/finOleadaSon').play()
+	#get_node(rutaJuego+'/Audios/finOleadaSon').play()
 	get_node(rutaJuego+'/Audios/audioFondoSon').play()
 	get_node(rutaJuego+'/InterfazSuperior/Porcentaje').text="0%"
 	get_node(rutaJuego+'/InterfazSuperior/Memoria').text = "0/255"

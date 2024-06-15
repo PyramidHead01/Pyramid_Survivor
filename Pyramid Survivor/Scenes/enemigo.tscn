@@ -1,9 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdr5hk1rgpc35"]
+[gd_scene load_steps=7 format=3 uid="uid://cdr5hk1rgpc35"]
 
 [ext_resource type="Script" path="res://Scripts/enemigo.gd" id="1_1fcu7"]
-[ext_resource type="Texture2D" uid="uid://b1g732s61kq7d" path="res://Sprites/Place_Holders/placeholder_enemigo.png" id="1_qn8br"]
+[ext_resource type="Texture2D" uid="uid://ckt7syepkaam" path="res://Sprites/Final/enemigo_0.png" id="2_67178"]
+[ext_resource type="Texture2D" uid="uid://ct4wktlqismrc" path="res://Sprites/Final/enemigo_1.png" id="3_b16vf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dsomi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_67178")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b16vf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8lk68"]
+size = Vector2(10, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8p2n"]
 size = Vector2(25, 25)
@@ -12,8 +28,9 @@ size = Vector2(25, 25)
 scale = Vector2(4, 4)
 script = ExtResource("1_1fcu7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_qn8br")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dsomi")
+frame_progress = 0.7497
 
 [node name="ZonaQueGolpea" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8lk68")

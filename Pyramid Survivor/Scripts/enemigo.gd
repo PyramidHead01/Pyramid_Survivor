@@ -14,6 +14,10 @@ func _on_area_2d_body_entered(body):
 		VariablesComunes.matarEnemigo(false)
 		queue_free()
 
+func _ready():
+	$AnimatedSprite2D.play()
+
+
 func _physics_process(delta):
 
 	if moverse:

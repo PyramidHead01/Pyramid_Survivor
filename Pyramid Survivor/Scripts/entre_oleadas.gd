@@ -8,7 +8,6 @@ func _ready():
 func _on_boton_tienda_body_entered(body):
 	if body.get("name")=="Player":
 		VariablesComunes.parar = true
-		#VariablesComunes.vel_player = 0
 		$Tienda.show()
 		emit_signal("hoverBotonTienda")
 func _on_boton_siguiente_oleada_body_entered(body):
@@ -17,9 +16,7 @@ func _on_boton_siguiente_oleada_body_entered(body):
 			
 		$botonSiguienteOleada/CollisionShape2D.set_deferred("disabled", true)
 		$botonTienda/CollisionShape2D.set_deferred("disabled", true)
-		
-		#$botonSiguienteOleada/CollisionShape2D.disabled = true
-		#$botonTienda/CollisionShape2D.disabled = true
+
 		hide()
 
 func _on_tienda_compra(id):
@@ -31,12 +28,15 @@ func _on_tienda_compra(id):
 			VariablesComunes.huesos_act -= precio
 			match id:
 				0:
-					VariablesComunes.vida_player_max+=1
-					var i = 0
-					for child in get_node(VariablesComunes.ruta_vida_spr).get_children():
-						if VariablesComunes.vida_player_max > i:
-							child.show()
-						i+= 1
+					if VariablesComunes.vida_player_max+1<=VariablesComunes.vida_player_max_total:
+						VariablesComunes.vida_player_max+=1
+						var i = 0
+						for child in get_node(VariablesComunes.ruta_vida_spr).get_children():
+							if VariablesComunes.vida_player_max > i:
+								child.show()
+							i+= 1
+					else:		
+						VariablesComunes.huesos_act += precio
 				1:
 					VariablesComunes.huesos_n+=1
 				2:

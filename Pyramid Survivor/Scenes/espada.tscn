@@ -1,21 +1,22 @@
 [gd_scene load_steps=5 format=3 uid="uid://bh6srikxvjfew"]
 
-[ext_resource type="Texture2D" uid="uid://cmy4upo5juut6" path="res://Sprites/Place_Holders/placeholder_espada.png" id="1_86l3i"]
 [ext_resource type="Script" path="res://Scripts/espada.gd" id="1_ou581"]
+[ext_resource type="Texture2D" uid="uid://258ifw7uwnib" path="res://Sprites/Final/espada.png" id="2_uw4hk"]
 [ext_resource type="AudioStream" uid="uid://dihv4ygde6ava" path="res://Sonidos/Finales/danoEnemigo.wav" id="3_nvekl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vygt3"]
 size = Vector2(30, 20)
 
 [node name="Espada" type="Area2D"]
-rotation = 1.5708
+rotation = 6.28319
 script = ExtResource("1_ou581")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_86l3i")
+position = Vector2(11, -9.53674e-07)
+texture = ExtResource("2_uw4hk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4.5, 0.5)
+position = Vector2(15.5, 0.499999)
 shape = SubResource("RectangleShape2D_vygt3")
 
 [node name="TiempoEspada" type="Timer" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bp0encacya66p"]
+[gd_scene load_steps=14 format=3 uid="uid://bp0encacya66p"]
 
 [ext_resource type="PackedScene" uid="uid://bybax5kfs32qj" path="res://Scenes/player.tscn" id="1_5awbe"]
 [ext_resource type="Script" path="res://Scripts/juegoControl.gd" id="1_ap6u7"]
@@ -7,14 +7,23 @@
 [ext_resource type="PackedScene" uid="uid://djlxg4jk0xhtp" path="res://Scenes/entre_oleadas.tscn" id="5_nn2r3"]
 [ext_resource type="AudioStream" uid="uid://cfhkhvon4em1" path="res://Sonidos/Finales/danoPlayer.wav" id="6_ctfl3"]
 [ext_resource type="AudioStream" uid="uid://cumymwac78wck" path="res://Sonidos/Finales/botonAceptar.wav" id="7_ylcg1"]
-[ext_resource type="AudioStream" uid="uid://cibqwedf7qgl7" path="res://Sonidos/placeholders/placeholder_menuJuego.ogg" id="9_dr22p"]
+[ext_resource type="AudioStream" uid="uid://xbp2syfv4yaq" path="res://Sonidos/Finales/combate.ogg" id="8_40ovv"]
 [ext_resource type="AudioStream" uid="uid://262lkabggthq" path="res://Sonidos/Finales/finOleada.wav" id="9_yppm8"]
 [ext_resource type="AudioStream" uid="uid://d30uktho0umrn" path="res://Sonidos/Finales/muertePlayer.wav" id="10_q4aug"]
 [ext_resource type="AudioStream" uid="uid://cir15ropmo1x1" path="res://Sonidos/Finales/muerteEnemigo.wav" id="11_3mhj6"]
 [ext_resource type="AudioStream" uid="uid://bgbfohmuorv47" path="res://Sonidos/Finales/instanciarEnemigo.wav" id="12_gwm5r"]
+[ext_resource type="Texture2D" uid="uid://sdx5sn5yb3qw" path="res://Sprites/Final/bloque.png" id="13_tn2vn"]
 
 [node name="Juego" type="Node2D"]
 script = ExtResource("1_ap6u7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_top = 199.0
+offset_right = 256.0
+offset_bottom = 375.0
+scale = Vector2(4, 4)
+texture = ExtResource("13_tn2vn")
+stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("1_5awbe")]
 position = Vector2(510, 490)
@@ -42,7 +51,7 @@ stream = ExtResource("6_ctfl3")
 stream = ExtResource("7_ylcg1")
 
 [node name="audioFondoSon" type="AudioStreamPlayer2D" parent="Audios"]
-stream = ExtResource("9_dr22p")
+stream = ExtResource("8_40ovv")
 
 [node name="finOleadaSon" type="AudioStreamPlayer2D" parent="Audios"]
 stream = ExtResource("9_yppm8")
