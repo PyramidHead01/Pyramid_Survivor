@@ -4,8 +4,6 @@ extends Node2D
 ########VARIABLES##########
 ###########################
 
-var ARG = 0
-
 var rutaJuego = '/root/menuInicio/Juego'
 
 #Player
@@ -42,7 +40,7 @@ var huesos_n = 0
 #Total enemigos
 var max_enemigos = 255
 var enemigos_cant = 0
-var enemigo_ind = 1
+var enemigo_ind = 5
 var enemigos_aumento = 10
 var enemigos_n = 0
 
@@ -66,7 +64,7 @@ func _ready():
 	pass
 func _process(delta):
 	if max_enemigos < enemigos_cant:
-		finOleada(false,"OUT OF MEMORY ERROR"+str(nOleadas))
+		finOleada(false,"OUT OF MEMORY ERROR\n"+"TOTAL STAGES: "+str(nOleadas))
 
 #Player
 func danoPlayer():
@@ -79,7 +77,7 @@ func danoPlayer():
 			get_node(rutaJuego+'/Audios/DanoPlayerSon').play()
 	if vida_player==0:
 		get_node(rutaJuego+'/Audios/muertePlayerSon').play()
-		finOleada(false,"GAME OVER:"+str(nOleadas))
+		finOleada(false,"YOU DIED\n"+"TOTAL STAGES: "+str(nOleadas))
 func matarPlayer(node):
 	node.queue_free()
 
@@ -154,8 +152,6 @@ func limpiarDatosInterfaz():
 		if vida_player_max > i:
 			child.show()
 		i+= 1
-func _on_porcentaje_oleada_timeout():
-	pass
 func finOleada(ganado, mensaje):
 	print(vida_player)
 	if ganado:
@@ -169,6 +165,7 @@ func finOleada(ganado, mensaje):
 	var oleada = get_node(rutaJuego+'/EntreOleadas') 
 	
 	var labelOleada=get_node(rutaJuego+'/EntreOleadas/LabelOleada')
+	labelOleada.text = mensaje
 	if !ganado:
 		muertePlayer = true
 	else:
@@ -181,7 +178,6 @@ func finOleada(ganado, mensaje):
 
 	oleada.show()
 func seguirOleada():
-	#get_node(rutaJuego+'/Audios/finOleadaSon').play()
 	get_node(rutaJuego+'/Audios/audioFondoSon').play()
 	get_node(rutaJuego+'/InterfazSuperior/Porcentaje').text="0%"
 	get_node(rutaJuego+'/InterfazSuperior/Memoria').text = "0/255"
@@ -189,8 +185,6 @@ func seguirOleada():
 	get_node(rutaJuego+'/PorcentajeOleada').start()
 	get_node(rutaJuego+'/Spawner').start()
 	
-	#get_node(rutaJuego+'/EntreOleadas/botonSiguienteOleada/CollisionShape2D').disabled = true
-	#get_node(rutaJuego+'/EntreOleadas/botonTienda/CollisionShape2D').disabled = true
 	limpiarDatosInterfaz()
 
 #Tienda

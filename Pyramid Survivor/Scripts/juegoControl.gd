@@ -1,15 +1,9 @@
 extends Node
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	$Audios/audioFondoSon.play()
 	$EntreOleadas/botonSiguienteOleada/CollisionShape2D.set_deferred("disabled", true)
 	$EntreOleadas/botonTienda/CollisionShape2D.set_deferred("disabled", true)
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
 	pass
 
 func _on_porcentaje_oleada_timeout():
@@ -17,5 +11,5 @@ func _on_porcentaje_oleada_timeout():
 	$InterfazSuperior/Porcentaje.text=str(VariablesComunes.porcentaje_actual)+"%"
 	if VariablesComunes.porcentaje_actual >= 100:
 		$Audios/audioFondoSon.stop()
-		VariablesComunes.finOleada(true,"END STAGE: "+str(VariablesComunes.nOleadas))
+		VariablesComunes.finOleada(true,"WAVE COMPLETED\n"+"REACHED WAVE: "+str(VariablesComunes.nOleadas))
 	pass

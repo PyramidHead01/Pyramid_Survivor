@@ -27,6 +27,9 @@ func ui_movimiento():
 
 	velocity = velocity.normalized() * VariablesComunes.vel_player
 
+	position.x = clamp(position.x, 0, 1024)
+	position.y = clamp(position.y, 199, 903)
+
 #Mezcladillo de cosas, movimiento y atacar por ahora
 func _physics_process(delta):
 	if !VariablesComunes.parar:

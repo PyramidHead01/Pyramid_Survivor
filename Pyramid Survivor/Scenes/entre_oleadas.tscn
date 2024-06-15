@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://djlxg4jk0xhtp"]
+[gd_scene load_steps=7 format=3 uid="uid://djlxg4jk0xhtp"]
 
 [ext_resource type="Script" path="res://Scripts/entre_oleadas.gd" id="1_jwmne"]
 [ext_resource type="Texture2D" uid="uid://cutglkclquwmw" path="res://Sprites/Final/siguienteOleada.png" id="2_x22x5"]
 [ext_resource type="Texture2D" uid="uid://dspp2ao1y47b1" path="res://Sprites/Final/vendedor.png" id="3_wmnen"]
+[ext_resource type="FontFile" uid="uid://b6d4iwri5lpd5" path="res://FontNES.ttf" id="4_07tux"]
 [ext_resource type="PackedScene" uid="uid://brewgxhcwxuiw" path="res://Scenes/tienda.tscn" id="4_fxxvb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hfcr"]
@@ -42,6 +43,7 @@ offset_bottom = 891.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_07tux")
 theme_override_font_sizes/font_size = 50
 text = "END STAGE"
 horizontal_alignment = 1
