@@ -28,6 +28,8 @@ func _on_tienda_compra(id):
 			VariablesComunes.huesos_act -= precio
 			match id:
 				0:
+					precio += 1
+					get_node("Tienda/TiendaUI/Precios").get_child(id).text = "x"+str(precio)
 					if VariablesComunes.vida_player_max+1<=VariablesComunes.vida_player_max_total:
 						VariablesComunes.vida_player_max+=1
 						var i = 0
@@ -38,12 +40,20 @@ func _on_tienda_compra(id):
 					else:		
 						VariablesComunes.huesos_act += precio
 				1:
+					precio += 1
+					get_node("Tienda/TiendaUI/Precios").get_child(id).text = "x"+str(precio)
 					VariablesComunes.huesos_n+=1
 				2:
+					precio += 1
+					get_node("Tienda/TiendaUI/Precios").get_child(id).text = "x"+str(precio)
 					VariablesComunes.porcentaje_n+=1
 				3:
+					precio += 1
+					get_node("Tienda/TiendaUI/Precios").get_child(id).text = "x"+str(precio)
 					VariablesComunes.enemigos_n-=1
 				4:
+					precio += 1
+					get_node("Tienda/TiendaUI/Precios").get_child(id).text = "x"+str(precio)
 					VariablesComunes.dano_n+=1
 				null:
 					print("Salir")

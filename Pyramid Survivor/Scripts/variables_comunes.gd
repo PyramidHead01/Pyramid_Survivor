@@ -12,7 +12,7 @@ var parar = false
 
 #Dano
 var dano_total = 20
-var dano_up = 5
+var dano_up = 10
 var dano_n = 0
 
 #Velocidades
@@ -32,9 +32,9 @@ var muertePlayer = false
 signal entreOleadas
 
 #Bolsa huesos
-var huesos_act = 200
-var huesos_ind = 1
-var huesos_aumento = 10
+var huesos_act = 15
+var huesos_ind = 10
+var huesos_aumento = 5
 var huesos_n = 0
 
 #Total enemigos
@@ -43,6 +43,7 @@ var enemigos_cant = 0
 var enemigo_ind = 5
 var enemigos_aumento = 10
 var enemigos_n = 0
+var num_enemigos_instanciados = 1
 
 #Porcentaje
 var porcentaje_actual = 0
@@ -183,6 +184,7 @@ func finOleada(ganado, mensaje):
 
 	oleada.show()
 func seguirOleada():
+	aumentarDificultad()
 	get_node(rutaJuego+'/Audios/audioFondoSon').play()
 	get_node(rutaJuego+'/InterfazSuperior/Porcentaje').text="0%"
 	get_node(rutaJuego+'/InterfazSuperior/Memoria').text = "0/255"
@@ -191,6 +193,19 @@ func seguirOleada():
 	get_node(rutaJuego+'/Spawner').start()
 	
 	limpiarDatosInterfaz()
+func aumentarDificultad():
+	#porcentaje
+	if porcentaje_x_seg > 1:
+		porcentaje_x_seg -= 1
+	#num_enemigos_instanciados
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	var enemigoExtra = rng.randi_range(0,1)
+
+	if enemigoExtra == 1 && num_enemigos_instanciados < 4:
+		num_enemigos_instanciados += 1
+	
+	pass
 
 #Tienda
 func interfaz_huesos():

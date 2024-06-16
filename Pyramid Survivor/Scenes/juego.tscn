@@ -29,7 +29,7 @@ stretch_mode = 1
 position = Vector2(510, 490)
 
 [node name="Spawner" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 autostart = true
 script = ExtResource("4_tf83g")
 

@@ -4,4 +4,5 @@ extends Timer
 var enemigo_base = preload("res://Scenes/enemigo.tscn")
 
 func _on_timeout():
-	VariablesComunes.nuevoEnemigo(enemigo_base)
+	for i in VariablesComunes.num_enemigos_instanciados:
+		VariablesComunes.nuevoEnemigo(enemigo_base)
