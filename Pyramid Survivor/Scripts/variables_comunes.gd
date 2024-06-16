@@ -60,11 +60,15 @@ var entre_oleadas = preload("res://Scenes/entre_oleadas.tscn")
 ###########################
 ########FUNCIONES##########
 ###########################
-func _ready():
-	pass
+
 func _process(delta):
 	if max_enemigos < enemigos_cant:
 		finOleada(false,"OUT OF MEMORY ERROR\n"+"TOTAL STAGES: "+str(nOleadas))
+	
+#	if muertePlayer && Input.is_action_just_pressed ('ui_accept'):
+#		print("FIN")
+#		get_tree().reload_current_scene()
+#		pass
 
 #Player
 func danoPlayer():
@@ -80,6 +84,7 @@ func danoPlayer():
 		finOleada(false,"YOU DIED\n"+"TOTAL STAGES: "+str(nOleadas))
 func matarPlayer(node):
 	node.queue_free()
+	print("MUERTE")
 
 #Enemigos
 func nuevoEnemigo(enemigo_base):
@@ -92,7 +97,7 @@ func nuevoEnemigo(enemigo_base):
 		pos_x = 0
 	else:
 		pos_x = 984
-	var pos_y = rng.randi_range(0, 960)
+	var pos_y = rng.randi_range(200, 960)
 	
 	#Instanciamos un enemigo, se hace hijo, y se pone en una pos random
 	var enemigo = enemigo_base.instantiate()

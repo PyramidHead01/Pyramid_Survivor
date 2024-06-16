@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+func _ready():
+	$Espada/CollisionShape2D.set_deferred("disabled", true)
+
 #Movimiento player (Solo se mueve a un punto a la vez)
 func ui_movimiento():
 	VariablesComunes.posicion_player=position
@@ -44,5 +47,4 @@ func _physics_process(delta):
 			$Audio/EspadaSon.play()
 
 func _on_juego_muerte_player():
-	print("FASDASD")
 	queue_free()
