@@ -27,6 +27,7 @@ func _on_tienda_compra(id):
 		if VariablesComunes.huesos_act >= precio:
 			VariablesComunes.huesos_act -= precio
 			match id:
+				#ViDA
 				0:
 					precio += 1
 					get_node("Tienda/TiendaUI/Precios").get_child(id).text = "x"+str(precio)
@@ -37,24 +38,36 @@ func _on_tienda_compra(id):
 							if VariablesComunes.vida_player_max > i:
 								child.show()
 							i+= 1
-					else:		
-						VariablesComunes.huesos_act += precio
+					if VariablesComunes.vida_player_max+1>VariablesComunes.vida_player_max_total:
+						print("TOPE")
+						get_node("Tienda/TiendaUI/Precios").get_child(id).text = "xMAX"
+						VariablesComunes.huesos_act += precio-1
+				#Huesos/DANO
 				1:
 					precio += 1
 					get_node("Tienda/TiendaUI/Precios").get_child(id).text = "x"+str(precio)
-					VariablesComunes.huesos_n+=1
+					VariablesComunes.dano_n+=1
+					#if VariablesComunes.huesos_n <= 4:
+
+					#if VariablesComunes.huesos_n > 4:
+					#	get_node("Tienda/TiendaUI/Precios").get_child(id).text = "xMAX"
+					#	VariablesComunes.huesos_act += precio
+				#Porcentaje/HUESOS
 				2:
 					precio += 1
 					get_node("Tienda/TiendaUI/Precios").get_child(id).text = "x"+str(precio)
-					VariablesComunes.porcentaje_n+=1
+					VariablesComunes.huesos_n+=1
+
+				#ENEMIGOS/PORCENTAJE
 				3:
 					precio += 1
 					get_node("Tienda/TiendaUI/Precios").get_child(id).text = "x"+str(precio)
-					VariablesComunes.enemigos_n-=1
+					VariablesComunes.porcentaje_n+=1
+				#Dano
 				4:
 					precio += 1
 					get_node("Tienda/TiendaUI/Precios").get_child(id).text = "x"+str(precio)
-					VariablesComunes.dano_n+=1
+					VariablesComunes.enemigos_n-=1
 				null:
 					print("Salir")
 
