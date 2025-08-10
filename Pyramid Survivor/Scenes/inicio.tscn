@@ -8,23 +8,23 @@
 [ext_resource type="Texture2D" uid="uid://cyynjm7d3kuu2" path="res://Sprites/Final/botonSeleccionado.png" id="4_wgew0"]
 [ext_resource type="AudioStream" uid="uid://cxplt61i54goe" path="res://Sonidos/Finales/menuInicio.ogg" id="5_nj84x"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g6x5l"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nxvhw"]
+texture = ExtResource("4_wgew0")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5hnga"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3alj4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jfi2b"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5hnga"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nxvhw"]
-texture = ExtResource("4_wgew0")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g6x5l"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_oxhkg"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_71h84"]
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sp0wj"]
 texture = ExtResource("4_wgew0")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_71h84"]
 
 [node name="menuInicio" type="Control"]
 layout_mode = 3
@@ -53,32 +53,32 @@ layout_mode = 2
 [node name="play_bot" type="Button" parent="OpcionesInicio/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_mryd2")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_g6x5l")
+theme_override_styles/focus = SubResource("StyleBoxTexture_nxvhw")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5hnga")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_3alj4")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_jfi2b")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_5hnga")
-theme_override_styles/focus = SubResource("StyleBoxTexture_nxvhw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g6x5l")
 text = "PLAY"
 icon = SubResource("ViewportTexture_oxhkg")
 
 [node name="instr_bot" type="Button" parent="OpcionesInicio/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_mryd2")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_71h84")
+theme_override_styles/focus = SubResource("StyleBoxTexture_sp0wj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5hnga")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_3alj4")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_jfi2b")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_5hnga")
-theme_override_styles/focus = SubResource("StyleBoxTexture_sp0wj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_71h84")
 text = "Instructions"
 
 [node name="cred_bot" type="Button" parent="OpcionesInicio/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_mryd2")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_71h84")
+theme_override_styles/focus = SubResource("StyleBoxTexture_sp0wj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5hnga")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_3alj4")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_jfi2b")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_5hnga")
-theme_override_styles/focus = SubResource("StyleBoxTexture_sp0wj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_71h84")
 text = "CREDITS"
 
 [node name="TimerRickRoll" type="Timer" parent="."]

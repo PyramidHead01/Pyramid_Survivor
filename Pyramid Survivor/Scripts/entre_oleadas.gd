@@ -70,4 +70,3 @@ func _on_tienda_compra(id):
 					VariablesComunes.enemigos_n-=1
 				null:
 					print("Salir")
-

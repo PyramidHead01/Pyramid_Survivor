@@ -26,5 +26,3 @@ func _on_salir_boton_pressed():
 	VariablesComunes.parar = false
 	#VariablesComunes.vel_player = VariablesComunes.vel_player_almacenada
 	hide()
-
-
